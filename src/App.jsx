@@ -16,12 +16,15 @@ import About from "./pages/About";
 // import Services from "./pages/Services";
 import Contact from "./pages/ContactPage";
 import Webinar from "./pages/Webinar";
+import ScrollToTop from "./components/ScrollToTop";
+import WhatsAppButton from "./components/WhatsAppButton";
 function App() {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       
       {/* Navbar */}
       <Navbar />
+      <ScrollToTop />
 
       {/* Main Content */}
       <div className="flex-grow">
@@ -45,6 +48,7 @@ function App() {
       </div> 
       {/* Footer */}
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

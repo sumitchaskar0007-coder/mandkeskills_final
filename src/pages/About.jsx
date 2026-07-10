@@ -6,7 +6,7 @@ import heroImage from "/assets/images/a2.png";
 import image1 from "/assets/images/a1.png";
 import image2 from "/assets/images/2.png";
 import radhikaImage from "/assets/images/radhika.png";
-import indraneilImage from "/assets/images/indraneil.png";
+import indraneilImage from "/assets/images/image.png";
 
 export default function About() {
   useEffect(() => {
@@ -82,7 +82,7 @@ export default function About() {
           border: 1px solid #7dd3fc;
           padding: 8px 20px;
           border-radius: 99px;
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 600;
           color: #0369a1;
           letter-spacing: 0.5px;
@@ -150,14 +150,14 @@ export default function About() {
 
         .stat-number {
           font-family: 'Times New Roman', Times, serif;
-          font-size: 36px;
+          font-size: 40.3px;
           font-weight: 800;
           color: #0ea5e9;
           line-height: 1;
         }
 
         .stat-label {
-          font-size: 14px;
+          font-size: 15.7px;
           color: #64748b;
           font-family: 'Poppins', sans-serif;
           margin-top: 4px;
@@ -179,7 +179,7 @@ export default function About() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 700;
           color: #0ea5e9;
           text-transform: uppercase;
@@ -210,7 +210,7 @@ export default function About() {
         }
 
         .section-subtitle {
-          font-size: 17px;
+          font-size: 19.0px;
           color: #475569;
           font-family: 'Poppins', sans-serif;
           line-height: 1.8;
@@ -265,14 +265,14 @@ export default function About() {
 
         .proposition-card h4 {
           font-family: 'Times New Roman', Times, serif;
-          font-size: 22px;
+          font-size: 24.6px;
           font-weight: 700;
           color: #0f172a;
           margin-bottom: 10px;
         }
 
         .proposition-card p {
-          font-size: 15px;
+          font-size: 16.8px;
           color: #64748b;
           font-family: 'Poppins', sans-serif;
           line-height: 1.7;
@@ -284,7 +284,7 @@ export default function About() {
         }
 
         .proposition-connector p {
-          font-size: 17px;
+          font-size: 19.0px;
           color: #475569;
           font-family: 'Poppins', sans-serif;
           line-height: 1.8;
@@ -304,7 +304,7 @@ export default function About() {
         }
 
         .founders-middle-box {
-          max-width: 900px;
+          max-width: 1180px;
           margin: 0 auto;
           text-align: center;
         }
@@ -322,7 +322,7 @@ export default function About() {
         }
 
         .founders-middle-box p {
-          font-size: 18px;
+          font-size: 20.2px;
           color: #475569;
           font-family: 'Poppins', sans-serif;
           line-height: 1.9;
@@ -387,6 +387,10 @@ export default function About() {
           box-shadow: 0 25px 70px rgba(14, 165, 233, 0.2);
         }
 
+        .founder-image-radhika {
+          object-position: center top;
+        }
+
         .founder-info {
           display: flex;
           flex-direction: column;
@@ -394,14 +398,14 @@ export default function About() {
 
         .founder-info .founder-name {
           font-family: 'Times New Roman', Times, serif;
-          font-size: 32px;
+          font-size: 35.8px;
           font-weight: 800;
           color: #0f172a;
           margin-bottom: 4px;
         }
 
         .founder-info .founder-role {
-          font-size: 16px;
+          font-size: 17.9px;
           color: #0ea5e9;
           font-weight: 600;
           font-family: 'Poppins', sans-serif;
@@ -409,7 +413,7 @@ export default function About() {
         }
 
         .founder-info .founder-desc {
-          font-size: 15px;
+          font-size: 16.8px;
           color: #475569;
           font-family: 'Poppins', sans-serif;
           line-height: 1.8;
@@ -424,7 +428,7 @@ export default function About() {
 
         .founder-capabilities h5 {
           font-family: 'Poppins', sans-serif;
-          font-size: 14px;
+          font-size: 15.7px;
           font-weight: 700;
           color: #0f172a;
           margin-bottom: 10px;
@@ -439,7 +443,7 @@ export default function About() {
         }
 
         .capability-list li {
-          font-size: 14px;
+          font-size: 15.7px;
           color: #475569;
           font-family: 'Poppins', sans-serif;
           line-height: 1.6;
@@ -454,7 +458,7 @@ export default function About() {
           left: 0;
           color: #0ea5e9;
           font-weight: 700;
-          font-size: 16px;
+          font-size: 17.9px;
         }
 
         .founder-contribution {
@@ -466,7 +470,7 @@ export default function About() {
 
         .founder-contribution h5 {
           font-family: 'Poppins', sans-serif;
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 700;
           color: #0369a1;
           text-transform: uppercase;
@@ -475,7 +479,7 @@ export default function About() {
         }
 
         .founder-contribution p {
-          font-size: 14px;
+          font-size: 15.7px;
           color: #0f172a;
           font-family: 'Poppins', sans-serif;
           line-height: 1.7;
@@ -511,21 +515,21 @@ export default function About() {
         }
 
         .synergy-item .synergy-icon {
-          font-size: 28px;
+          font-size: 31.4px;
           margin-bottom: 8px;
           display: block;
         }
 
         .synergy-item h5 {
           font-family: 'Times New Roman', Times, serif;
-          font-size: 20px;
+          font-size: 22.4px;
           font-weight: 700;
           color: #0f172a;
           margin-bottom: 4px;
         }
 
         .synergy-item p {
-          font-size: 14px;
+          font-size: 15.7px;
           color: #64748b;
           font-family: 'Poppins', sans-serif;
           line-height: 1.5;
@@ -547,7 +551,7 @@ export default function About() {
         }
 
         .synergy-conclusion p {
-          font-size: 18px;
+          font-size: 20.2px;
           color: #0f172a;
           font-family: 'Poppins', sans-serif;
           line-height: 1.8;
@@ -563,7 +567,7 @@ export default function About() {
 
         .synergy-conclusion .tagline {
           margin-top: 12px;
-          font-size: 20px;
+          font-size: 22.4px;
           font-weight: 800;
           color: #0ea5e9;
           font-family: 'Times New Roman', Times, serif;
@@ -615,7 +619,7 @@ export default function About() {
         }
 
         .usp-number {
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 700;
           color: #0ea5e9;
           letter-spacing: 1px;
@@ -626,14 +630,14 @@ export default function About() {
 
         .usp-card h4 {
           font-family: 'Times New Roman', Times, serif;
-          font-size: 22px;
+          font-size: 24.6px;
           font-weight: 700;
           color: #0f172a;
           margin-bottom: 10px;
         }
 
         .usp-card p {
-          font-size: 15px;
+          font-size: 16.8px;
           color: #64748b;
           font-family: 'Poppins', sans-serif;
           line-height: 1.7;
@@ -720,7 +724,7 @@ export default function About() {
         }
 
         .cta-section p {
-          font-size: 19px;
+          font-size: 21.3px;
           color: rgba(255,255,255,0.9);
           font-family: 'Poppins', sans-serif;
           margin-bottom: 32px;
@@ -738,7 +742,7 @@ export default function About() {
           color: #0ea5e9;
           border: none;
           border-radius: 14px;
-          font-size: 17px;
+          font-size: 19.0px;
           font-weight: 600;
           font-family: 'Poppins', sans-serif;
           cursor: pointer;
@@ -864,7 +868,7 @@ export default function About() {
           }
 
           .stat-number {
-            font-size: 30px;
+            font-size: 33.6px;
           }
 
           .proposition-card,
@@ -873,7 +877,7 @@ export default function About() {
           }
 
           .about-hero-badge {
-            font-size: 12px;
+            font-size: 13.4px;
             padding: 6px 16px;
           }
 
@@ -883,7 +887,7 @@ export default function About() {
 
           .cta-btn {
             padding: 14px 36px;
-            font-size: 16px;
+            font-size: 17.9px;
             width: 100%;
             justify-content: center;
             max-width: 400px;
@@ -898,7 +902,7 @@ export default function About() {
           }
 
           .founder-info .founder-name {
-            font-size: 28px;
+            font-size: 31.4px;
           }
 
           .synergy-grid {
@@ -911,7 +915,7 @@ export default function About() {
           }
 
           .synergy-item h5 {
-            font-size: 17px;
+            font-size: 19.0px;
           }
 
           .founder-row {
@@ -919,7 +923,7 @@ export default function About() {
           }
 
           .founders-middle-box p {
-            font-size: 16px;
+            font-size: 17.9px;
           }
         }
 
@@ -934,7 +938,7 @@ export default function About() {
           }
 
           .about-hero h1 {
-            font-size: 32px;
+            font-size: 35.8px;
           }
 
           .section-padding {
@@ -957,20 +961,20 @@ export default function About() {
           }
 
           .stat-number {
-            font-size: 26px;
+            font-size: 29.1px;
           }
 
           .cta-section h2 {
-            font-size: 28px;
+            font-size: 31.4px;
           }
 
           .cta-section p {
-            font-size: 16px;
+            font-size: 17.9px;
           }
 
           .cta-btn {
             padding: 12px 28px;
-            font-size: 15px;
+            font-size: 16.8px;
           }
 
           .about-hero-image {
@@ -986,11 +990,11 @@ export default function About() {
           }
 
           .founder-info .founder-name {
-            font-size: 24px;
+            font-size: 26.9px;
           }
 
           .founder-info .founder-role {
-            font-size: 14px;
+            font-size: 15.7px;
           }
 
           .founder-image {
@@ -1007,15 +1011,15 @@ export default function About() {
           }
 
           .synergy-item .synergy-icon {
-            font-size: 22px;
+            font-size: 24.6px;
           }
 
           .synergy-item h5 {
-            font-size: 15px;
+            font-size: 16.8px;
           }
 
           .synergy-item p {
-            font-size: 12px;
+            font-size: 13.4px;
           }
 
           .synergy-conclusion {
@@ -1023,11 +1027,11 @@ export default function About() {
           }
 
           .synergy-conclusion p {
-            font-size: 15px;
+            font-size: 16.8px;
           }
 
           .synergy-conclusion .tagline {
-            font-size: 17px;
+            font-size: 19.0px;
           }
 
           .founder-row {
@@ -1035,7 +1039,7 @@ export default function About() {
           }
 
           .founders-middle-box p {
-            font-size: 15px;
+            font-size: 16.8px;
           }
         }
       `}</style>
@@ -1057,7 +1061,7 @@ export default function About() {
                 <h1>
                   Welcome to <span className="miles-blue">MILES</span>
                 </h1>
-                <p> (<span className="miles-blue">MILES</span>) is a hub for employability-focused learning - a platform that is a direct pipeline between education and industry. We curate and deliver short-term, high-impact courses designed by top industry trainers and experts, helping learners gain skills that lead directly to ready job opportunities.
+                <p> Mandke Institute for Learning Employable Skills(<span className="miles-blue">MILES</span>) is a hub for employability-focused learning - a platform that is a direct pipeline between education and industry. We curate and deliver short-term, high-impact courses designed by top industry trainers and experts, helping learners gain skills that lead directly to ready job opportunities.
                 </p>
                 <div className="about-hero-stats">
                   <div className="stat-item">
@@ -1170,7 +1174,7 @@ export default function About() {
                 <img 
                   src={radhikaImage} 
                   alt="Mrs. Radhika Godbole - Educator & Skill Development Advocate" 
-                  className="founder-image"
+                  className="founder-image founder-image-radhika"
                 />
               </div>
               <div className="founder-info">
@@ -1242,33 +1246,6 @@ export default function About() {
             <p className="section-subtitle">
               The strength of <span className="miles-blue">MILES</span> lies in the complementary capabilities of its founders:
             </p>
-
-            <div className="synergy-grid">
-              <div className="synergy-item">
-                <span className="synergy-icon">🎓</span>
-                <h5>Education</h5>
-                <p>+</p>
-                <p className="miles-blue">Industry</p>
-              </div>
-              <div className="synergy-item">
-                <span className="synergy-icon">💎</span>
-                <h5>Values</h5>
-                <p>+</p>
-                <p className="miles-blue">Skills</p>
-              </div>
-              <div className="synergy-item">
-                <span className="synergy-icon">📚</span>
-                <h5>Knowledge</h5>
-                <p>+</p>
-                <p className="miles-blue">Application</p>
-              </div>
-              <div className="synergy-item">
-                <span className="synergy-icon">🚀</span>
-                <h5>Learning</h5>
-                <p>+</p>
-                <p className="miles-blue">Employability</p>
-              </div>
-            </div>
 
             <div className="synergy-conclusion">
               <p>

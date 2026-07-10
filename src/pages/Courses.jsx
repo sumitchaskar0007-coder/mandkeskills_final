@@ -148,7 +148,7 @@ your career. </p>
     }
 
     .course-icon{
-      font-size:48px;
+      font-size: 53.8px;
       margin-bottom:15px;
     }
 
@@ -158,7 +158,7 @@ your career. </p>
       color:#0284c7;
       padding:6px 12px;
       border-radius:30px;
-      font-size:12px;
+      font-size: 13.4px;
       font-weight:600;
       margin-bottom:15px;
     }

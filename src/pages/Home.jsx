@@ -12,17 +12,89 @@ import {
   ArrowRight,
   CheckCircle,
   Award,
-  Zap,
   TrendingUp,
   BookOpen,
-  Calendar,
   BarChart3,
   Sparkles,
-  HelpCircle,
   ChevronDown,
-  ChevronUp,
+  MapPin,
+  Quote,
+  Star,
+  X,
 } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+const careerPaths = [
+  {
+    id: "numbers",
+    label: "I like numbers & business",
+    courses: [
+      { title: "Tally + Accounting", path: "/courses/tally-c" },
+      { title: "Export–Import", path: "/courses/exim" },
+    ],
+  },
+  {
+    id: "technology",
+    label: "I like technology",
+    courses: [
+      { title: "Cyber Security", path: "/courses/ethical-hacking" },
+      { title: "No-Code AI", path: "/courses/genai-ml" },
+      { title: "Data Analytics", path: "/courses/ai-data-science" },
+    ],
+  },
+  {
+    id: "business",
+    label: "I want my own business",
+    courses: [
+      { title: "Export–Import", path: "/courses/exim" },
+      { title: "No-Code AI", path: "/courses/genai-ml" },
+    ],
+  },
+  {
+    id: "creative",
+    label: "I like creative work",
+    courses: [
+      { title: "Photography", path: "/courses" },
+      { title: "No-Code AI", path: "/courses/genai-ml" },
+    ],
+  },
+  {
+    id: "studying",
+    label: "I want a job while studying",
+    courses: [
+      { title: "Tally Essentials", path: "/courses/tally" },
+      { title: "Personality Development", path: "/courses/personality" },
+    ],
+  },
+];
+
+const testimonials = [
+  {
+    name: "Aarav Kulkarni",
+    course: "Tally & Accounting",
+    location: "Kothrud, Pune",
+    quote: "The practical exercises made accounting much easier to understand. I now feel confident working with real business entries and reports.",
+  },
+  {
+    name: "Sneha Patil",
+    course: "Generative AI",
+    location: "Wakad, Pune",
+    quote: "The sessions were clear, current, and genuinely hands-on. I can now use AI tools thoughtfully in my daily work instead of only experimenting with them.",
+  },
+  {
+    name: "Rohan Deshmukh",
+    course: "Ethical Hacking",
+    location: "Hadapsar, Pune",
+    quote: "MILES helped me turn my interest in cybersecurity into structured skills. The trainer explained complex topics with practical examples.",
+  },
+  {
+    name: "Isha Joshi",
+    course: "Personality Development",
+    location: "Baner, Pune",
+    quote: "I became more comfortable speaking in interviews and presenting myself professionally. The small improvements made a big difference to my confidence.",
+  },
+];
 
 export default function Home() {
   // Updated courses array with new career tracks and job roles
@@ -82,45 +154,8 @@ export default function Home() {
 
   const whyChooseImages = [image1, image2, image3, image4];
 
-  // FAQ Data with expanded state
-  const [activeFaq, setActiveFaq] = useState(null);
-
-  const faqs = [
-    {
-      id: 1,
-      question: "Do I need coding knowledge?",
-      answer: "No. This course starts with fundamentals. We begin with the basics and gradually build up your skills, making it accessible for complete beginners."
-    },
-    {
-      id: 2,
-      question: "Is this only for IT students?",
-      answer: "No. Beginners from any stream can explore cybersecurity. Our programs are designed to be inclusive and accessible to students from all academic backgrounds."
-    },
-    {
-      id: 3,
-      question: "Will this guarantee a job?",
-      answer: "The course builds practical skills and career readiness; employment depends on individual performance, opportunities and continued learning. We provide placement assistance and industry connections to help you succeed."
-    },
-    {
-      id: 4,
-      question: "What is the duration of the course?",
-      answer: "Course durations vary by program. Most of our career tracks are designed to be completed in 3-6 months with flexible learning options to suit your schedule."
-    },
-    {
-      id: 5,
-      question: "Do I get a certificate after completion?",
-      answer: "Yes, upon successful completion of the course, you will receive an industry-recognized certificate from MILES that validates your skills and enhances your employability."
-    },
-    {
-      id: 6,
-      question: "Is there any placement support?",
-      answer: "Absolutely! We provide comprehensive placement assistance including resume building, interview preparation, and connections with our network of hiring partners."
-    }
-  ];
-
-  const toggleFaq = (id) => {
-    setActiveFaq(activeFaq === id ? null : id);
-  };
+  const [careerMenuOpen, setCareerMenuOpen] = useState(false);
+  const [selectedCareer, setSelectedCareer] = useState(null);
 
   return (
     <div className="home-page">
@@ -150,14 +185,61 @@ Courses Designed With Industry Needs.
               </p>
 
               <div className="hero-buttons">
-                <button className="primary-btn">
-                  Explore Courses
-                  <ArrowRight size={18} />
+                <button
+                  className="primary-btn career-trigger"
+                  type="button"
+                  aria-expanded={careerMenuOpen}
+                  aria-controls="career-path-menu"
+                  onClick={() => setCareerMenuOpen((open) => !open)}
+                >
+                  Career Path Finder
+                  <ChevronDown size={18} />
                 </button>
 
-                <button className="secondary-btn">
-                  Learn More
-                </button>
+                {careerMenuOpen && (
+                  <div className="career-dropdown" id="career-path-menu">
+                    <div className="career-dropdown-head">
+                      <span>Career Path Finder</span>
+                      <strong>What sounds most like you?</strong>
+                    </div>
+
+                    <div className={`career-choices${selectedCareer ? " has-selection" : ""}`}>
+                      {(selectedCareer ? [selectedCareer] : careerPaths).map((path) => (
+                        <button
+                          key={path.id}
+                          type="button"
+                          className={selectedCareer?.id === path.id ? "active" : ""}
+                          onClick={() => setSelectedCareer(path)}
+                        >
+                          {path.label}<ArrowRight size={15} />
+                        </button>
+                      ))}
+
+                      {selectedCareer && (
+                        <div className="career-suggestions" aria-live="polite">
+                          <div className="career-suggestions-head">
+                            <span>Suggested courses</span>
+                            <button
+                              type="button"
+                              aria-label="Clear selected career"
+                              title="Clear selection"
+                              onClick={() => setSelectedCareer(null)}
+                            >
+                              <X size={16} aria-hidden="true" />
+                            </button>
+                          </div>
+                          <div>
+                            {selectedCareer.courses.map((course) => (
+                              <Link key={course.title} to={course.path}>
+                                {course.title}<ArrowRight size={15} />
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -232,7 +314,7 @@ Courses Designed With Industry Needs.
                 <p>
                   MILES is dedicated to empowering students with practical,
                   industry-focused skills that enhance employability and career
-                  growth in today's competitive job market.
+                  growth in today&apos;s competitive job market.
                 </p>
               </div>
             </div>
@@ -319,7 +401,7 @@ Our strong network of hiring partners ensures that training leads to real employ
               <h4>Industry-Education Collaboration</h4>
               <p>
 2.Programs are co-created with industry professionals and employers, ensuring relevance and currency.
-This means learners don't just learn theory - they gain the exact skills employers are looking for.                </p>
+This means learners don&apos;t just learn theory - they gain the exact skills employers are looking for.                </p>
             </div>
 
             <div className="usp-card">
@@ -332,63 +414,38 @@ This means learners don't just learn theory - they gain the exact skills employe
         </div>
       </section>
 
-      {/* FAQ SECTION - Professional Accordion Style */}
-      <section className="faq-section">
+      {/* TESTIMONIALS */}
+      <section className="testimonials-section">
         <div className="container">
-          <div className="faq-header">
-            <span className="faq-badge">STUDENT FAQ</span>
-            <h2 className="faq-title">Frequently Asked Questions</h2>
-            <p className="faq-subtitle">
-              Find answers to the most common questions about our programs
-            </p>
+          <div className="testimonials-heading">
+            <span>STUDENT STORIES</span>
+            <h2>What Our Learners Say</h2>
+            <p>Real learning experiences from the MILES community across Pune.</p>
           </div>
 
-          <div className="faq-list">
-            {faqs.map((faq) => (
-              <div 
-                key={faq.id} 
-                className={`faq-item ${activeFaq === faq.id ? 'active' : ''}`}
-                onClick={() => toggleFaq(faq.id)}
-              >
-                <div className="faq-question">
-                  <div className="faq-question-content">
-                    <div className="faq-icon">
-                      <HelpCircle size={22} />
-                    </div>
-                    <h4>{faq.question}</h4>
-                  </div>
-                  <div className="faq-toggle">
-                    {activeFaq === faq.id ? (
-                      <ChevronUp size={22} />
-                    ) : (
-                      <ChevronDown size={22} />
-                    )}
+          <div className="testimonials-grid">
+            {testimonials.map((testimonial) => (
+              <article className="testimonial-card" key={testimonial.name}>
+                <div className="testimonial-topline">
+                  <Quote className="testimonial-quote-icon" aria-hidden="true" />
+                  <div className="testimonial-stars" aria-label="5 out of 5 stars">
+                    {[1, 2, 3, 4, 5].map((star) => <Star key={star} fill="currentColor" />)}
                   </div>
                 </div>
-                <div className={`faq-answer ${activeFaq === faq.id ? 'open' : ''}`}>
-                  <p>{faq.answer}</p>
-                </div>
-              </div>
+                <blockquote>“{testimonial.quote}”</blockquote>
+                <footer>
+                  <div className="testimonial-avatar" aria-hidden="true">
+                    {testimonial.name.split(" ").map((part) => part[0]).join("")}
+                  </div>
+                  <div>
+                    <strong>{testimonial.name}</strong>
+                    <span>{testimonial.course}</span>
+                    <small><MapPin />{testimonial.location}</small>
+                  </div>
+                </footer>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="cta-section">
-        <div className="container">
-
-          <h2>Start Building Your Future Today</h2>
-
-          <p>
-            Join MILES and gain the practical skills, industry exposure,
-            and confidence needed to succeed in your dream career.
-          </p>
-
-          <button className="primary-btn">
-            Enroll Now
-          </button>
-
         </div>
       </section>
 

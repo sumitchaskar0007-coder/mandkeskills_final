@@ -23,11 +23,8 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [showSearchDropdown, setShowSearchDropdown] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const dropdownRef = useRef(null);
   const courseBtnRef = useRef(null);
-  const searchRef = useRef(null);
-  const searchInputRef = useRef(null);
 
   // Update active page based on current route
   useEffect(() => {
@@ -36,8 +33,6 @@ export default function Navbar() {
       setActivePage("Home");
     } else if (path === "/courses") {
       setActivePage("Courses");
-    } else if (path === "/contact") {
-      setActivePage("Contact");
     } else if (path === "/about") {
       setActivePage("About");
     } else if (path.startsWith("/courses/")) {
@@ -60,15 +55,6 @@ export default function Navbar() {
         !courseBtnRef.current.contains(e.target)
       ) {
         setCoursesOpen(false);
-      }
-      if (
-        searchRef.current &&
-        !searchRef.current.contains(e.target) &&
-        searchInputRef.current &&
-        !searchInputRef.current.contains(e.target)
-      ) {
-        setShowSearchDropdown(false);
-        setIsSearchOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -100,34 +86,10 @@ export default function Navbar() {
     setShowSearchDropdown(filtered.length > 0);
   }, [searchQuery]);
 
-  const handleNavigation = (path) => {
-    navigate(path);
-    setCoursesOpen(false);
-    setMobileOpen(false);
-    setMobileCoursesOpen(false);
-    setShowSearchDropdown(false);
-    setSearchQuery("");
-    setIsSearchOpen(false);
-  };
-
   const handleLogoClick = () => {
     navigate("/");
     setActivePage("Home");
     setMobileOpen(false);
-  };
-
-  const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
-    if (!isSearchOpen) {
-      setTimeout(() => {
-        if (searchInputRef.current) {
-          searchInputRef.current.focus();
-        }
-      }, 100);
-    } else {
-      setSearchQuery("");
-      setShowSearchDropdown(false);
-    }
   };
 
   const handleCourseClick = (path) => {
@@ -135,7 +97,6 @@ export default function Navbar() {
     setShowSearchDropdown(false);
     setSearchQuery("");
     setMobileOpen(false);
-    setIsSearchOpen(false);
   };
 
   // Open Google Form in a new tab
@@ -232,7 +193,7 @@ export default function Navbar() {
           position: relative;
           padding: 10px 18px;
           border-radius: 12px;
-          font-size: 16px;
+          font-size: 17.9px;
           font-weight: 500;
           color: #334155;
           cursor: pointer;
@@ -283,7 +244,7 @@ export default function Navbar() {
           color: #ffffff;
           padding: 12px 24px;
           border-radius: 12px;
-          font-size: 15px;
+          font-size: 16.8px;
           font-weight: 600;
           border: none;
           cursor: pointer;
@@ -325,7 +286,7 @@ export default function Navbar() {
           align-items: center;
           gap: 6px;
           font-family: 'Poppins', sans-serif;
-          font-size: 14px;
+          font-size: 15.7px;
           font-weight: 500;
         }
 
@@ -350,7 +311,7 @@ export default function Navbar() {
           padding: 10px 16px 10px 40px;
           border-radius: 12px;
           border: 2px solid #E2E8F0;
-          font-size: 14px;
+          font-size: 15.7px;
           font-family: 'Inter', sans-serif;
           background: #F8FAFC;
           transition: all 0.3s;
@@ -432,7 +393,7 @@ export default function Navbar() {
         }
 
         .search-result-icon {
-          font-size: 20px;
+          font-size: 22.4px;
         }
 
         .search-result-info {
@@ -440,19 +401,19 @@ export default function Navbar() {
         }
 
         .search-result-title {
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 500;
           font-family: 'Inter', sans-serif;
         }
 
         .search-result-tag {
-          font-size: 11px;
+          font-size: 12.3px;
           color: #94A3B8;
           font-family: 'Inter', sans-serif;
         }
 
         .search-result-path {
-          font-size: 11px;
+          font-size: 12.3px;
           color: #38BDF8;
           font-family: 'Inter', sans-serif;
           font-weight: 500;
@@ -462,7 +423,7 @@ export default function Navbar() {
           padding: 20px 16px;
           text-align: center;
           color: #94A3B8;
-          font-size: 13px;
+          font-size: 14.6px;
           font-family: 'Inter', sans-serif;
         }
 
@@ -503,7 +464,7 @@ export default function Navbar() {
         }
 
         .dropdown-title {
-          font-size: 11px;
+          font-size: 12.3px;
           font-weight: 700;
           color: #38BDF8;
           letter-spacing: 1.8px;
@@ -511,7 +472,7 @@ export default function Navbar() {
         }
 
         .dropdown-subtitle {
-          font-size: 12px;
+          font-size: 13.4px;
           color: #94A3B8;
           font-family: 'Inter', sans-serif;
         }
@@ -542,13 +503,13 @@ export default function Navbar() {
           box-shadow: 0 8px 28px rgba(56,189,248,0.15);
         }
 
-        .course-icon { font-size: 22px; line-height: 1; }
+        .course-icon { font-size: 24.6px; line-height: 1; }
 
         .course-tag {
           display: inline-flex;
           padding: 2px 10px;
           border-radius: 99px;
-          font-size: 10px;
+          font-size: 11.2px;
           font-weight: 600;
           letter-spacing: 0.7px;
           text-transform: uppercase;
@@ -559,7 +520,7 @@ export default function Navbar() {
         }
 
         .course-name {
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 600;
           color: #1E293B;
           line-height: 1.4;
@@ -571,7 +532,7 @@ export default function Navbar() {
         .course-arrow {
           margin-top: auto;
           color: #CBD5E1;
-          font-size: 13px;
+          font-size: 14.6px;
           transition: color 0.2s, transform 0.2s;
         }
 
@@ -590,7 +551,7 @@ export default function Navbar() {
         }
 
         .dropdown-footer-text {
-          font-size: 12px;
+          font-size: 13.4px;
           color: #94A3B8;
           font-family: 'Inter', sans-serif;
         }
@@ -603,7 +564,7 @@ export default function Navbar() {
           border-radius: 10px;
           border: 1.5px solid #38BDF8;
           color: #0284C7;
-          font-size: 13px;
+          font-size: 14.6px;
           font-weight: 600;
           font-family: 'Poppins', sans-serif;
           cursor: pointer;
@@ -672,7 +633,7 @@ export default function Navbar() {
           border-radius: 14px;
           margin-bottom: 6px;
           color: #334155;
-          font-size: 15px;
+          font-size: 16.8px;
           font-weight: 500;
           cursor: pointer;
           transition: all 0.2s;
@@ -701,7 +662,7 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 16px;
+          font-size: 17.9px;
         }
 
         .mobile-courses-panel {
@@ -721,7 +682,7 @@ export default function Navbar() {
           cursor: pointer;
           transition: background 0.2s;
           color: #475569;
-          font-size: 13.5px;
+          font-size: 15.1px;
           font-family: 'Inter', sans-serif;
           text-decoration: none;
         }
@@ -731,7 +692,7 @@ export default function Navbar() {
           color: #0284C7;
         }
 
-        .mobile-course-item span { font-size: 18px; }
+        .mobile-course-item span { font-size: 20.2px; }
 
         .mobile-divider {
           height: 1px;
@@ -746,7 +707,7 @@ export default function Navbar() {
           border: none;
           background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 100%);
           color: #fff;
-          font-size: 15px;
+          font-size: 16.8px;
           font-weight: 700;
           font-family: 'Poppins', sans-serif;
           cursor: pointer;
@@ -765,7 +726,7 @@ export default function Navbar() {
         .mobile-search-wrapper .search-input {
           width: 100%;
           padding: 12px 16px 12px 40px;
-          font-size: 14px;
+          font-size: 15.7px;
         }
 
         /* ── RESPONSIVE BREAKPOINTS ── */
@@ -779,7 +740,7 @@ export default function Navbar() {
           }
           
           .nav-link {
-            font-size: 17px;
+            font-size: 19.0px;
             padding: 10px 20px;
           }
           
@@ -790,7 +751,7 @@ export default function Navbar() {
 
           .search-input {
             width: 260px;
-            font-size: 15px;
+            font-size: 16.8px;
           }
 
           .search-input:focus {
@@ -806,7 +767,7 @@ export default function Navbar() {
           }
           
           .nav-link {
-            font-size: 15px;
+            font-size: 16.8px;
             padding: 8px 14px;
           }
           
@@ -817,7 +778,7 @@ export default function Navbar() {
 
           .search-input {
             width: 200px;
-            font-size: 14px;
+            font-size: 15.7px;
           }
 
           .search-input:focus {
@@ -827,7 +788,7 @@ export default function Navbar() {
 
         @media (max-width: 1200px) {
           .nav-link {
-            font-size: 14px;
+            font-size: 15.7px;
             padding: 8px 12px;
           }
           
@@ -851,7 +812,7 @@ export default function Navbar() {
           
           .apply-btn {
             padding: 10px 18px;
-            font-size: 14px;
+            font-size: 15.7px;
           }
         }
 
@@ -931,7 +892,7 @@ export default function Navbar() {
           
           .mobile-nav-item {
             padding: 12px 14px;
-            font-size: 14px;
+            font-size: 15.7px;
           }
         }
 
@@ -969,16 +930,16 @@ export default function Navbar() {
           
           .mobile-nav-item {
             padding: 10px 12px;
-            font-size: 13px;
+            font-size: 14.6px;
           }
           
           .mobile-course-item {
             padding: 10px 12px;
-            font-size: 13px;
+            font-size: 14.6px;
           }
           
           .mobile-cta {
-            font-size: 14px;
+            font-size: 15.7px;
             padding: 12px;
           }
           
@@ -997,7 +958,7 @@ export default function Navbar() {
           
           .mobile-search-wrapper .search-input {
             padding: 10px 14px 10px 36px;
-            font-size: 13px;
+            font-size: 14.6px;
           }
         }
 
@@ -1020,16 +981,16 @@ export default function Navbar() {
           
           .mobile-nav-item {
             padding: 8px 10px;
-            font-size: 12px;
+            font-size: 13.4px;
           }
           
           .mobile-course-item {
             padding: 8px 10px;
-            font-size: 12px;
+            font-size: 13.4px;
           }
           
           .mobile-cta {
-            font-size: 13px;
+            font-size: 14.6px;
             padding: 10px;
           }
           
@@ -1056,7 +1017,7 @@ export default function Navbar() {
           
           .mobile-nav-item {
             padding: 6px 10px;
-            font-size: 13px;
+            font-size: 14.6px;
           }
           
           .mobile-courses-panel {
@@ -1066,16 +1027,16 @@ export default function Navbar() {
           
           .mobile-course-item {
             padding: 5px 10px;
-            font-size: 12px;
+            font-size: 13.4px;
           }
           
           .mobile-search-wrapper .search-input {
             padding: 8px 14px 8px 36px;
-            font-size: 13px;
+            font-size: 14.6px;
           }
           
           .mobile-cta {
-            font-size: 13px;
+            font-size: 14.6px;
             padding: 10px;
           }
         }
@@ -1089,7 +1050,7 @@ export default function Navbar() {
           }
           
           .nav-link {
-            font-size: 20px;
+            font-size: 22.4px;
             padding: 12px 24px;
           }
           
@@ -1100,7 +1061,7 @@ export default function Navbar() {
 
           .search-input {
             width: 300px;
-            font-size: 17px;
+            font-size: 19.0px;
           }
 
           .search-input:focus {
@@ -1108,7 +1069,7 @@ export default function Navbar() {
           }
           
           .apply-btn {
-            font-size: 17px;
+            font-size: 19.0px;
             padding: 14px 32px;
           }
         }
@@ -1133,10 +1094,6 @@ export default function Navbar() {
                 className={`nav-link ${activePage === "Home" ? "active" : ""}`}
                 onClick={() => setCoursesOpen(false)}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                  <polyline points="9 22 9 12 15 12 15 22"/>
-                </svg>
                 Home
               </Link>
             </li>
@@ -1147,11 +1104,6 @@ export default function Navbar() {
                 className={`nav-link ${activePage === "About" ? "active" : ""}`}
                 onClick={() => setCoursesOpen(false)}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <line x1="12" y1="16" x2="12" y2="12"/>
-                  <line x1="12" y1="8" x2="12.01" y2="8"/>
-                </svg>
                 About MILES
               </Link>
             </li>
@@ -1162,10 +1114,6 @@ export default function Navbar() {
                 className={`nav-link ${activePage === "Courses" ? "active" : ""}`}
                 onClick={() => { setCoursesOpen((o) => !o); }}
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                  <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                </svg>
                 Courses
                 <svg className={`chevron ${coursesOpen ? "open" : ""}`} width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="6 9 12 15 18 9"/>
@@ -1189,10 +1137,9 @@ export default function Navbar() {
                           className="course-card"
                           onClick={() => setCoursesOpen(false)}
                         >
-                          <span className="course-icon">{c.icon}</span>
+                          <span className="course-icon" aria-hidden="true">{c.icon}</span>
                           <span className="course-tag">{c.tag}</span>
                           <span className="course-name">{c.title}</span>
-                          <span className="course-arrow">→</span>
                         </Link>
                       ))}
                     </div>
@@ -1200,9 +1147,6 @@ export default function Navbar() {
                     <div className="dropdown-footer">
                       <span className="dropdown-footer-text">Certified · Industry-Ready · Career-Focused</span>
                       <Link to="/courses" className="view-all-btn" onClick={() => setCoursesOpen(false)}>
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                        </svg>
                         Browse All
                       </Link>
                     </div>
@@ -1211,88 +1155,13 @@ export default function Navbar() {
               )}
             </li>
 
-            <li>
-              <Link
-                to="/contact"
-                className={`nav-link ${activePage === "Contact" ? "active" : ""}`}
-                onClick={() => setCoursesOpen(false)}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                Contact
-              </Link>
-            </li>
           </ul>
 
           {/* Apply Now Button - Right */}
           <div className="search-section">
             <button className="apply-btn" onClick={openInterestForm}>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 2L11 13"/>
-                <path d="M22 2L15 22l-4-9-9-4z"/>
-              </svg>
-              Apply Now
+              Enquiry
             </button>
-          </div>
-
-          {/* Search - Right */}
-          <div className="search-section" ref={searchRef}>
-            {isSearchOpen ? (
-              <div className="search-wrapper">
-                <input
-                  ref={searchInputRef}
-                  type="text"
-                  className="search-input"
-                  placeholder="Search courses..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => {
-                    if (searchQuery.trim() !== "" && searchResults.length > 0) {
-                      setShowSearchDropdown(true);
-                    }
-                  }}
-                />
-                <svg className="search-icon-input" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                </svg>
-                <button className="search-close-btn" onClick={toggleSearch}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="18" y1="6" x2="6" y2="18"/>
-                    <line x1="6" y1="6" x2="18" y2="18"/>
-                  </svg>
-                </button>
-
-                {showSearchDropdown && (
-                  <div className="search-dropdown">
-                    {searchResults.map((course) => (
-                      <Link
-                        key={course.id}
-                        to={course.path}
-                        className="search-result-item"
-                        onClick={() => handleCourseClick(course.path)}
-                      >
-                        <span className="search-result-icon">{course.icon}</span>
-                        <div className="search-result-info">
-                          <div className="search-result-title">{course.title}</div>
-                          <div className="search-result-tag">{course.tag}</div>
-                        </div>
-                        <div className="search-result-path">→</div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <button className="search-toggle-btn" onClick={toggleSearch}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="11" cy="11" r="8"/>
-                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-                </svg>
-                <span className="desktop-only">Find Courses</span>
-              </button>
-            )}
           </div>
 
           {/* Hamburger - Mobile */}
@@ -1326,10 +1195,6 @@ export default function Navbar() {
                 }
               }}
             />
-            <svg className="search-icon-input" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"/>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-            </svg>
             {showSearchDropdown && (
               <div className="search-dropdown" style={{ position: 'relative', marginTop: '4px', maxHeight: '200px' }}>
                 {searchResults.map((course) => (
@@ -1339,7 +1204,6 @@ export default function Navbar() {
                     className="search-result-item"
                     onClick={() => handleCourseClick(course.path)}
                   >
-                    <span className="search-result-icon">{course.icon}</span>
                     <div className="search-result-info">
                       <div className="search-result-title">{course.title}</div>
                       <div className="search-result-tag">{course.tag}</div>
@@ -1356,7 +1220,6 @@ export default function Navbar() {
             onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
           >
             <div className="mobile-nav-item-left">
-              <div className="mobile-icon-wrap">🏠</div>
               <span>Home</span>
             </div>
           </Link>
@@ -1367,14 +1230,12 @@ export default function Navbar() {
             onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
           >
             <div className="mobile-nav-item-left">
-              <div className="mobile-icon-wrap">ℹ️</div>
               <span>About MILES</span>
             </div>
           </Link>
 
           <div className="mobile-nav-item" onClick={() => setMobileCoursesOpen((o) => !o)}>
             <div className="mobile-nav-item-left">
-              <div className="mobile-icon-wrap">📚</div>
               <span>Courses</span>
             </div>
             <svg className={`chevron ${mobileCoursesOpen ? "open" : ""}`} width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0EA5E9" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -1391,23 +1252,11 @@ export default function Navbar() {
                   className="mobile-course-item"
                   onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
                 >
-                  <span>{c.icon}</span>
                   <span>{c.title}</span>
                 </Link>
               ))}
             </div>
           )}
-
-          <Link
-            to="/contact"
-            className={`mobile-nav-item ${activePage === "Contact" ? "active" : ""}`}
-            onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
-          >
-            <div className="mobile-nav-item-left">
-              <div className="mobile-icon-wrap">📞</div>
-              <span>Contact</span>
-            </div>
-          </Link>
 
           <div className="mobile-divider" />
 

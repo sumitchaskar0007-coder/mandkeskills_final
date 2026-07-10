@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+html,
+body,
+#root,
+button,
+input,
+textarea,
+select,
+*::before,
+*::after {
+  font-family: "Poppins", sans-serif !important;
+}
+
+html {
+  font-size: 20.2px;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+* {
+  font-family: "Poppins", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 19.0px;
+  }
+}

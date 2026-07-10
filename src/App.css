@@ -1,0 +1,143 @@
+/* Shared page rhythm
+   Keeps content aligned and removes oversized gaps without affecting the
+   global navigation, footer, or the custom Webinar composition. */
+.flex-grow > :not(.webinar-page) .container {
+  width: 100% !important;
+  max-width: 1280px !important;
+  margin-inline: auto !important;
+  padding-inline: clamp(16px, 3vw, 28px) !important;
+  box-sizing: border-box;
+}
+
+/* Shared professional color treatment across every standard page. */
+.flex-grow > :is(
+  .courses-page,
+  .exim-page,
+  .insurance-page,
+  .tally-page,
+  .tally-c-page,
+  .hacking-page,
+  .ai-page,
+  .genai-page,
+  .personality-page,
+  .contact-page,
+  .about-container
+) {
+  background-color: #e6edf7 !important;
+}
+
+.flex-grow > :is(
+  .exim-page,
+  .insurance-page,
+  .tally-page,
+  .tally-c-page,
+  .hacking-page,
+  .ai-page,
+  .genai-page,
+  .personality-page,
+  .contact-page
+) > .hero-section,
+.flex-grow > .about-container > .about-hero {
+  background: linear-gradient(135deg, #dce8f5 0%, #e4e0f2 50%, #d8edf0 100%) !important;
+}
+
+.flex-grow > .courses-page {
+  background: linear-gradient(135deg, #dce8f5, #e4e0f2) !important;
+}
+
+/* Keep page introductions close to the navigation instead of stretching
+   every hero to the full viewport height. */
+.flex-grow > :not(.webinar-page) > .hero-section,
+.flex-grow > :not(.webinar-page) > .about-hero {
+  min-height: auto !important;
+  padding-top: clamp(40px, 5vw, 64px) !important;
+  padding-bottom: clamp(48px, 6vw, 76px) !important;
+}
+
+.flex-grow > .home-page > .hero-section {
+  padding-bottom: 150px !important;
+}
+
+.flex-grow > .courses-page {
+  padding-top: clamp(40px, 5vw, 64px) !important;
+}
+
+.flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.flex-grow > :not(.webinar-page) [class$="-grid"] {
+  gap: clamp(18px, 2.4vw, 28px) !important;
+}
+
+.flex-grow > :not(.webinar-page) .section-header,
+.flex-grow > :not(.webinar-page) .faq-header {
+  margin-bottom: clamp(26px, 3.5vw, 42px) !important;
+}
+
+@media (max-width: 768px) {
+  .flex-grow > :not(.webinar-page) > .hero-section,
+  .flex-grow > :not(.webinar-page) > .about-hero {
+    padding-top: 32px !important;
+    padding-bottom: 44px !important;
+  }
+
+  .flex-grow > .home-page > .hero-section {
+    padding-bottom: 90px !important;
+  }
+
+  .flex-grow > .courses-page {
+    padding-top: 32px !important;
+  }
+
+  .flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .flex-grow > :not(.webinar-page) [class$="-grid"] {
+    gap: 18px !important;
+  }
+}
+
+/* Compact homepage content rhythm without changing the hero composition. */
+.flex-grow > .home-page section:not(.hero-section):not(.stats-section) {
+  padding-top: 48px !important;
+  padding-bottom: 48px !important;
+}
+
+.home-page .courses-grid {
+  margin-top: 38px !important;
+}
+
+.home-page .why-choose-top {
+  gap: 38px !important;
+  margin-bottom: 38px !important;
+}
+
+.home-page .usp-grid,
+.home-page .testimonials-grid {
+  margin-top: 32px !important;
+}
+
+.home-page .testimonials-heading {
+  margin-bottom: 32px !important;
+}
+
+.flex-grow > .contact-page .cta-section {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
+@media (max-width: 768px) {
+  .flex-grow > .home-page section:not(.hero-section):not(.stats-section) {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+
+  .flex-grow > .contact-page .cta-section {
+    padding-top: 14px !important;
+    padding-bottom: 14px !important;
+  }
+}

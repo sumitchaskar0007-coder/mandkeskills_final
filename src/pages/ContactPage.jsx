@@ -20,6 +20,46 @@ import {
   Navigation
 } from 'lucide-react';
 
+const InquiryForm = ({ prefix = 'contact' }) => (
+  <form className="contact-form">
+    <div className="form-row">
+      <div className="form-group">
+        <label htmlFor={`${prefix}-name`}>Full Name</label>
+        <input type="text" id={`${prefix}-name`} placeholder="Enter your full name" />
+      </div>
+      <div className="form-group">
+        <label htmlFor={`${prefix}-email`}>Email Address</label>
+        <input type="email" id={`${prefix}-email`} placeholder="Enter your email" />
+      </div>
+    </div>
+    <div className="form-row">
+      <div className="form-group">
+        <label htmlFor={`${prefix}-phone`}>Phone Number</label>
+        <input type="tel" id={`${prefix}-phone`} placeholder="Enter your phone number" />
+      </div>
+      <div className="form-group">
+        <label htmlFor={`${prefix}-program`}>Program Interest</label>
+        <select id={`${prefix}-program`} defaultValue="hacking">
+          <option value="" disabled>Select a program</option>
+          <option value="exim">EXIM Trade</option>
+          <option value="insurance">Insurance Essentials</option>
+          <option value="tally">Tally Prime 7.0</option>
+          <option value="tally-comprehensive">Tally Comprehensive</option>
+          <option value="hacking">Ethical Hacking</option>
+          <option value="ai">AI &amp; Data Science</option>
+          <option value="genai">GenAI &amp; ML No-Code</option>
+          <option value="personality">Personality Development</option>
+        </select>
+      </div>
+    </div>
+    <div className="form-group full-width">
+      <label htmlFor={`${prefix}-message`}>Your Message</label>
+      <textarea id={`${prefix}-message`} rows="4" placeholder="Tell us about your requirements..." />
+    </div>
+    <button type="submit" className="submit-btn">Send Message</button>
+  </form>
+);
+
 const ContactPage = () => {
   return (
     <div className="contact-page">
@@ -30,24 +70,8 @@ const ContactPage = () => {
         </div>
         <div className="container">
           <div className="hero-grid">
-            <div className="hero-content fade-up">
-              <span className="hero-badge">
-                <Mail className="inline-icon" /> GET IN TOUCH
-              </span>
-              <h1 className="hero-title">
-                Contact<span>Us</span>
-              </h1>
-              <p className="hero-description">
-                Reach out to us for skill development program inquiries.
-              </p>
-              <div className="hero-buttons">
-                <a href="#contact-form" className="primary-btn">
-                  <Send size={20} /> Send Message
-                </a>
-                <a href="#visit-us" className="secondary-btn">
-                  <MapPin size={20} /> Visit Us
-                </a>
-              </div>
+            <div className="hero-content hero-form-content fade-up" id="contact-form">
+              <InquiryForm prefix="hero" />
             </div>
           </div>
         </div>
@@ -68,9 +92,6 @@ const ContactPage = () => {
                 Paud Road, Kothrud, Pune 411038.<br />
                 Maharashtra, India
               </p>
-              <a href="#" className="quick-info-link">
-                Get Directions <ArrowRight size={16} />
-              </a>
             </div>
             <div className="quick-info-card">
               <div className="quick-info-icon">
@@ -81,9 +102,6 @@ const ContactPage = () => {
                 <strong>Mon-Sat:</strong> 10am - 4pm<br />
                 <strong>Sun:</strong> Weekly Off
               </p>
-              <a href="#" className="quick-info-link">
-                Schedule a Visit <ArrowRight size={16} />
-              </a>
             </div>
             <div className="quick-info-card">
               <div className="quick-info-icon">
@@ -91,160 +109,9 @@ const ContactPage = () => {
               </div>
               <h3>Quick Contact</h3>
               <p>
-                <strong>Phone:</strong> +91 98765 43210<br />
-                <strong>Email:</strong> info@mandkeskills.com
+                <strong>Phone:</strong> <a href="tel:+919112220491">+91 9112220491</a><br />
+                <strong>Email:</strong> <a href="mailto:mandkeskills@gmail.com">mandkeskills@gmail.com</a>
               </p>
-              <a href="#" className="quick-info-link">
-                Chat Now <ArrowRight size={16} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About & Stats Section */}
-      <section className="about-stats-section">
-        <div className="container">
-          <div className="about-stats-grid">
-            <div className="about-text">
-              <span className="section-tag">About Miles</span>
-              <h2>Empowering Skills for Future Success</h2>
-              <p>
-                At Miles, we bridge academic knowledge with industry demands through 
-                practical training and hands-on experience, ensuring our students are 
-                job-ready from day one in various fields.
-              </p>
-              <div className="about-features">
-                <div className="about-feature">
-                  <CheckCircle size={20} />
-                  <span>Industry-aligned curriculum</span>
-                </div>
-                <div className="about-feature">
-                  <CheckCircle size={20} />
-                  <span>Practical hands-on training</span>
-                </div>
-                <div className="about-feature">
-                  <CheckCircle size={20} />
-                  <span>Job-ready skills development</span>
-                </div>
-              </div>
-            </div>
-            <div className="stats-showcase">
-              <div className="stats-showcase-card">
-                <div className="stats-showcase-number">150+</div>
-                <p>Industry Leaders Trust</p>
-              </div>
-              <div className="stats-showcase-card">
-                <div className="stats-showcase-number">15</div>
-                <p>Job Ready Programs</p>
-              </div>
-              <div className="stats-showcase-card">
-                <div className="stats-showcase-number">100%</div>
-                <p>Placement Assistance</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form & Map Section */}
-      <section className="contact-form-section" id="contact-form">
-        <div className="container">
-          <div className="section-header">
-            <span>Send a Message</span>
-            <h2>Get in Touch With Us</h2>
-            <p>Have questions about our programs? We're here to help!</p>
-          </div>
-          <div className="contact-form-grid">
-            <div className="contact-form-wrapper">
-              <form className="contact-form">
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="name">
-                      <User size={18} /> Full Name
-                    </label>
-                    <input type="text" id="name" placeholder="Enter your full name" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">
-                      <Mail size={18} /> Email Address
-                    </label>
-                    <input type="email" id="email" placeholder="Enter your email" />
-                  </div>
-                </div>
-                <div className="form-row">
-                  <div className="form-group">
-                    <label htmlFor="phone">
-                      <Phone size={18} /> Phone Number
-                    </label>
-                    <input type="tel" id="phone" placeholder="Enter your phone number" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="program">
-                      <Briefcase size={18} /> Program Interest
-                    </label>
-                    <select id="program">
-                      <option value="">Select a program</option>
-                      <option value="exim">EXIM Trade</option>
-                      <option value="insurance">Insurance Essentials</option>
-                      <option value="tally">Tally Prime 7.0</option>
-                      <option value="tally-comprehensive">Tally Comprehensive</option>
-                      <option value="hacking">Ethical Hacking</option>
-                      <option value="ai">AI & Data Science</option>
-                      <option value="genai">GenAI & ML No-Code</option>
-                      <option value="personality">Personality Development</option>
-                    </select>
-                  </div>
-                </div>
-                <div className="form-group full-width">
-                  <label htmlFor="message">
-                    <FileText size={18} /> Your Message
-                  </label>
-                  <textarea id="message" rows="5" placeholder="Tell us about your requirements..."></textarea>
-                </div>
-                <button type="submit" className="submit-btn">
-                  <Send size={20} /> Send Message
-                </button>
-              </form>
-            </div>
-            <div className="contact-map-wrapper">
-              <div className="map-container">
-                <div className="map-placeholder">
-                  <MapPin size={48} className="map-pin" />
-                  <h3>Visit Our Campus</h3>
-                  <p>
-                    Mandke Growth Centre,<br />
-                    Next to Ideal Colony Metro Station,<br />
-                    Paud Road, Kothrud, Pune 411038
-                  </p>
-                  <a href="#" className="map-link">
-                    <Navigation size={18} /> Get Directions
-                  </a>
-                </div>
-              </div>
-              <div className="contact-details">
-                <div className="contact-detail-item">
-                  <Phone size={20} className="detail-icon" />
-                  <div>
-                    <h4>Call Us</h4>
-                    <p>+91 98765 43210</p>
-                  </div>
-                </div>
-                <div className="contact-detail-item">
-                  <Mail size={20} className="detail-icon" />
-                  <div>
-                    <h4>Email Us</h4>
-                    <p>info@mandkeskills.com</p>
-                  </div>
-                </div>
-                <div className="contact-detail-item">
-                  <Clock size={20} className="detail-icon" />
-                  <div>
-                    <h4>Office Hours</h4>
-                    <p>Mon-Sat 10am - 4pm</p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -255,9 +122,6 @@ const ContactPage = () => {
         <div className="container">
           <h2>Ready to Start Your Journey?</h2>
           <p>Join thousands of students who have transformed their careers with Miles.</p>
-          <div className="cta-buttons">
-           
-          </div>
         </div>
       </section>
 
@@ -271,6 +135,10 @@ const ContactPage = () => {
           font-family: "Poppins", "Times New Roman", serif;
           overflow-x: hidden;
           background: #ffffff;
+        }
+
+        .cta-section > .container > p {
+          white-space: nowrap;
         }
 
         .container {
@@ -305,13 +173,13 @@ const ContactPage = () => {
 
         .hero-grid {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr;
           gap: 60px;
           align-items: center;
           position: relative;
           z-index: 2;
-          min-height: 100vh;
-          padding: 80px 0;
+          min-height: auto;
+          padding: 36px 0;
         }
 
         .hero-content {
@@ -323,6 +191,16 @@ const ContactPage = () => {
           border-radius: 24px;
           backdrop-filter: blur(10px);
           border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-form-content {
+          width: min(100%, 700px);
+          max-width: 700px;
+          margin: 0 auto 0 -8%;
+          padding: 36px;
+          background: #ffffff;
+          border: 1px solid rgba(255, 255, 255, 0.85);
+          box-shadow: 0 24px 60px rgba(2, 6, 23, 0.28);
         }
 
         .hero-badge {
@@ -465,7 +343,7 @@ const ContactPage = () => {
         }
 
         .quick-info-card h3 {
-          font-size: 20px;
+          font-size: 22.4px;
           font-weight: 700;
           color: #1a2332;
           margin-bottom: 15px;
@@ -474,7 +352,7 @@ const ContactPage = () => {
 
         .quick-info-card p {
           color: #1a2332;
-          font-size: 14px;
+          font-size: 15.7px;
           line-height: 1.8;
           margin-bottom: 20px;
         }
@@ -486,7 +364,7 @@ const ContactPage = () => {
           color: #1a56db;
           font-weight: 600;
           text-decoration: none;
-          font-size: 14px;
+          font-size: 15.7px;
           transition: 0.3s;
         }
 
@@ -510,7 +388,7 @@ const ContactPage = () => {
         .section-tag {
           color: #1a56db;
           font-weight: 700;
-          font-size: 14px;
+          font-size: 15.7px;
           text-transform: uppercase;
           letter-spacing: 1px;
         }
@@ -525,7 +403,7 @@ const ContactPage = () => {
         .about-text p {
           color: #1a2332;
           line-height: 1.8;
-          font-size: 16px;
+          font-size: 17.9px;
         }
 
         .about-features {
@@ -539,7 +417,7 @@ const ContactPage = () => {
           display: flex;
           align-items: center;
           gap: 12px;
-          font-size: 15px;
+          font-size: 16.8px;
           color: #1a2332;
         }
 
@@ -578,7 +456,7 @@ const ContactPage = () => {
 
         .stats-showcase-card p {
           color: #1a2332;
-          font-size: 14px;
+          font-size: 15.7px;
           margin-top: 8px;
         }
 
@@ -622,7 +500,7 @@ const ContactPage = () => {
         }
 
         .contact-form-wrapper {
-          background: #f8fafc;
+          background: #ffffff;
           padding: 40px;
           border-radius: 24px;
           border: 1px solid #e2e8f0;
@@ -656,7 +534,7 @@ const ContactPage = () => {
           gap: 8px;
           font-weight: 600;
           color: #1a2332;
-          font-size: 14px;
+          font-size: 15.7px;
         }
 
         .form-group label svg {
@@ -670,10 +548,19 @@ const ContactPage = () => {
           border: 1px solid #e2e8f0;
           border-radius: 12px;
           font-family: "Poppins", sans-serif;
-          font-size: 14px;
+          font-size: 15.7px;
           transition: 0.3s;
           background: #ffffff;
           color: #1a2332;
+          accent-color: #1a56db;
+        }
+
+        .form-group input:-webkit-autofill,
+        .form-group input:-webkit-autofill:hover,
+        .form-group input:-webkit-autofill:focus {
+          -webkit-text-fill-color: #1a2332;
+          -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
+          box-shadow: 0 0 0 1000px #ffffff inset;
         }
 
         .form-group input:focus,
@@ -691,7 +578,7 @@ const ContactPage = () => {
           padding: 16px 30px;
           border-radius: 14px;
           font-weight: 600;
-          font-size: 16px;
+          font-size: 17.9px;
           cursor: pointer;
           display: inline-flex;
           align-items: center;
@@ -733,7 +620,7 @@ const ContactPage = () => {
         }
 
         .map-placeholder h3 {
-          font-size: 20px;
+          font-size: 22.4px;
           color: #1a2332;
           font-family: "Times New Roman", "Poppins", serif;
           margin-bottom: 10px;
@@ -741,7 +628,7 @@ const ContactPage = () => {
 
         .map-placeholder p {
           color: #1a2332;
-          font-size: 14px;
+          font-size: 15.7px;
           line-height: 1.8;
           margin-bottom: 20px;
         }
@@ -788,37 +675,39 @@ const ContactPage = () => {
         }
 
         .contact-detail-item h4 {
-          font-size: 14px;
+          font-size: 15.7px;
           font-weight: 600;
           color: #1a2332;
           margin: 0;
         }
 
         .contact-detail-item p {
-          font-size: 13px;
+          font-size: 14.6px;
           color: #1a2332;
           margin: 0;
         }
 
         /* CTA */
         .cta-section {
-          padding: 120px 20px;
+          padding: 18px 20px !important;
           text-align: center;
           background: linear-gradient(135deg, #020617, #0f172a);
           color: #ffffff;
         }
 
         .cta-section h2 {
-          font-size: 3.5rem;
+          margin: 0;
+          font-size: 2.25rem;
+          line-height: 1.15;
           font-family: "Times New Roman", "Poppins", serif;
           color: #ffffff;
         }
 
         .cta-section p {
           max-width: 700px;
-          margin: 25px auto;
+          margin: 8px auto 0;
           color: #cbd5e1;
-          line-height: 1.8;
+          line-height: 1.4;
           font-family: "Poppins", sans-serif;
         }
 
@@ -877,7 +766,7 @@ const ContactPage = () => {
           padding: 30px 0;
           text-align: center;
           color: #64748b;
-          font-size: 14px;
+          font-size: 15.7px;
           border-top: 1px solid rgba(255,255,255,0.05);
           font-family: "Poppins", sans-serif;
         }
@@ -913,6 +802,14 @@ const ContactPage = () => {
         }
 
         @media (max-width: 768px) {
+          .cta-section > .container > p {
+            white-space: normal;
+          }
+
+          .hero-form-content {
+            margin: 0 auto;
+          }
+
           .hero-grid {
             grid-template-columns: 1fr;
             text-align: center;
@@ -981,7 +878,7 @@ const ContactPage = () => {
           }
 
           .hero-badge {
-            font-size: 12px;
+            font-size: 13.4px;
             padding: 8px 16px;
           }
 
