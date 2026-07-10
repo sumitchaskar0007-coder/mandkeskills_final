@@ -35,6 +35,8 @@ export default function Navbar() {
       setActivePage("Courses");
     } else if (path === "/about") {
       setActivePage("About");
+    } else if (path === "/webinar") {
+      setActivePage("Webinar");
     } else if (path.startsWith("/courses/")) {
       setActivePage("Courses");
     }
@@ -104,6 +106,17 @@ export default function Navbar() {
     window.open("https://docs.google.com/forms/d/e/1FAIpQLSdYkMi78TLwol39eBaIE2kBU3MRWxnkIk3RaSJojHtpjMp_Mw/viewform", "_blank");
     setMobileOpen(false);
     setCoursesOpen(false);
+  };
+
+  // Function to handle navigation with scroll to top (matching Footer behavior)
+  const handleNavigation = (path) => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate(path);
+    setCoursesOpen(false);
+    setMobileOpen(false);
   };
 
   return (
@@ -237,6 +250,38 @@ export default function Navbar() {
 
         .chevron { transition: transform 0.25s; }
         .chevron.open { transform: rotate(180deg); }
+
+        /* ── WEBINAR BUTTON (matching Footer registration-link) ── */
+        .webinar-btn {
+          background: #ff6b35;
+          padding: 10px 20px;
+          border-radius: 20px;
+          font-weight: 600 !important;
+          color: #ffffff !important;
+          transition: all 0.3s ease !important;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          border: none;
+          cursor: pointer;
+          font-family: 'Poppins', sans-serif;
+          font-size: 16.8px;
+          white-space: nowrap;
+        }
+
+        .webinar-btn:hover {
+          background: #ff8255 !important;
+          color: #ffffff !important;
+          transform: scale(1.05) !important;
+          box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .webinar-btn::before {
+          content: "★";
+          margin-right: 5px;
+          color: #ffffff;
+        }
 
         /* ── APPLY BUTTON ── */
         .apply-btn {
@@ -717,6 +762,35 @@ export default function Navbar() {
           text-align: center;
         }
 
+        /* Mobile webinar button */
+        .mobile-webinar-btn {
+          width: 100%;
+          padding: 14px;
+          border-radius: 20px;
+          border: none;
+          background: #ff6b35;
+          color: #ffffff;
+          font-size: 16.8px;
+          font-weight: 600;
+          font-family: 'Poppins', sans-serif;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          display: block;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+
+        .mobile-webinar-btn:hover {
+          background: #ff8255;
+          transform: scale(1.02);
+        }
+
+        .mobile-webinar-btn::before {
+          content: "★ ";
+          color: #ffffff;
+        }
+
         /* Mobile search */
         .mobile-search-wrapper {
           margin-bottom: 14px;
@@ -812,6 +886,11 @@ export default function Navbar() {
           
           .apply-btn {
             padding: 10px 18px;
+            font-size: 15.7px;
+          }
+
+          .webinar-btn {
+            padding: 8px 16px;
             font-size: 15.7px;
           }
         }
@@ -1072,6 +1151,11 @@ export default function Navbar() {
             font-size: 19.0px;
             padding: 14px 32px;
           }
+
+          .webinar-btn {
+            font-size: 19.0px;
+            padding: 12px 24px;
+          }
         }
       `}</style>
 
@@ -1157,11 +1241,18 @@ export default function Navbar() {
 
           </ul>
 
-          {/* Apply Now Button - Right */}
+          {/* Apply Now & Webinar Buttons - Right */}
           <div className="search-section">
             <button className="apply-btn" onClick={openInterestForm}>
               Enquiry
             </button>
+            <Link
+              to="/webinar"
+              className="webinar-btn"
+              onClick={() => handleNavigation('/webinar')}
+            >
+              Webinar
+            </Link>
           </div>
 
           {/* Hamburger - Mobile */}
@@ -1258,7 +1349,30 @@ export default function Navbar() {
             </div>
           )}
 
+          <Link
+            to="/webinar"
+            className={`mobile-nav-item ${activePage === "Webinar" ? "active" : ""}`}
+            onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
+          >
+            <div className="mobile-nav-item-left">
+              <span>Webinar</span>
+            </div>
+          </Link>
+
           <div className="mobile-divider" />
+
+          {/* Mobile Webinar Button - matching Footer style */}
+          <Link
+            to="/webinar"
+            className="mobile-webinar-btn"
+            onClick={() => { 
+              setMobileOpen(false); 
+              setMobileCoursesOpen(false);
+              handleNavigation('/webinar');
+            }}
+          >
+            Webinar
+          </Link>
 
           <button className="mobile-cta" onClick={openInterestForm}>
             Apply Now — Express Your Interest →
