@@ -35,9 +35,7 @@ export default function Navbar() {
       setActivePage("Courses");
     } else if (path === "/about") {
       setActivePage("About");
-    } else if (path === "/webinar") {
-      setActivePage("Webinar");
-    } else if (path.startsWith("/courses/")) {
+    }  else if (path.startsWith("/courses/")) {
       setActivePage("Courses");
     }
   }, [location]);
@@ -1246,13 +1244,7 @@ export default function Navbar() {
             <button className="apply-btn" onClick={openInterestForm}>
               Enquiry
             </button>
-            <Link
-              to="/webinar"
-              className="webinar-btn"
-              onClick={() => handleNavigation('/webinar')}
-            >
-              Webinar
-            </Link>
+            
           </div>
 
           {/* Hamburger - Mobile */}

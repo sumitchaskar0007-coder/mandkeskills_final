@@ -84,7 +84,7 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a 
                   href="/webinar" 
                   className="registration-link"
@@ -95,7 +95,7 @@ const Footer = () => {
                 >
                   Webinar
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
