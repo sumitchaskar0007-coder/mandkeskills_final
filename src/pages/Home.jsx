@@ -40,7 +40,7 @@ const careerPaths = [
     courses: [
       { title: "Cyber Security", path: "/courses/ethical-hacking" },
       { title: "No-Code AI", path: "/courses/genai-ml" },
-      { title: "Data Analytics", path: "/courses/ai-data-science" },
+      { title: "Data Analytics", path: "/courses/data-analytics" },
     ],
   },
   {
@@ -250,6 +250,9 @@ Courses Designed With Industry Needs.
                 src={heroImage}
                 alt="MILES Hero"
                 className="hero-image"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
             </div>
 
@@ -300,7 +303,7 @@ Courses Designed With Industry Needs.
               <div className="images-grid">
                 {whyChooseImages.map((img, index) => (
                   <div key={index} className="image-card">
-                    <img src={img} alt={`Why Choose MILES ${index + 1}`} />
+                    <img src={img} alt={`Why Choose MILES ${index + 1}`} loading="lazy" decoding="async" />
                   </div>
                 ))}
               </div>

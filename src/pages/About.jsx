@@ -16,8 +16,6 @@ export default function About() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
         .about-container {
           font-family: 'Poppins', sans-serif;
           background: #ffffff;
@@ -1094,9 +1092,7 @@ export default function About() {
         <section className="core-proposition section-padding">
           <div className="container">
             <div className="section-label">Our Core Proposition</div>
-            <h2 className="section-title">
-              Our <span className="miles-blue">Core Proposition</span>
-            </h2>
+            
             <p className="section-subtitle">
               <span className="miles-blue">MILES</span> is not just another training institute – it is an ecosystem for employability. We connect:
             </p>
@@ -1263,13 +1259,13 @@ export default function About() {
           <div className="container">
             <div className="image-break-grid">
               <div className="image-break-card">
-                <img src={image1} alt="MILES Training Session" />
+                <img src={image1} alt="MILES Training Session" loading="lazy" decoding="async" />
               </div>
               <div className="image-break-card">
-                <img src={image2} alt="MILES Students Learning" />
+                <img src={image2} alt="MILES Students Learning" loading="lazy" decoding="async" />
               </div>
               <div className="image-break-card">
-                <img src={heroImage} alt="MILES Career Opportunities" />
+                <img src={heroImage} alt="MILES Career Opportunities" loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

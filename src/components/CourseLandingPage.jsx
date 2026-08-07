@@ -18,7 +18,7 @@ export default function CourseLandingPage({ course }) {
   return <main className="course-formula" style={{ "--course-accent": course.accent }}>
     {/* 1. Big Promise */}
     <section className="course-formula__hero">
-      <img src={course.image} alt="" aria-hidden="true" />
+      <img src={course.image} alt="" aria-hidden="true" loading="eager" decoding="async" fetchPriority="high" />
       <div className="course-formula__hero-shade" />
       <div className="course-formula__container course-formula__hero-content">
         <span className="course-formula__badge"><Sparkles size={16} /> {course.badge}</span>

@@ -139,8 +139,6 @@ const Footer = () => {
       </div>
 
       <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-
         * {
           margin: 0;
           padding: 0;
@@ -164,7 +162,7 @@ const Footer = () => {
 
         .footer-grid {
           display: grid;
-          grid-template-columns: 2fr 1fr 1.5fr;
+          grid-template-columns: 2fr 1fr;
           gap: 40px;
           padding-bottom: 40px;
           border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -175,6 +173,10 @@ const Footer = () => {
           display: flex;
           flex-direction: column;
           gap: 20px;
+        }
+
+        .footer-column:has(.newsletter-section) {
+          display: none;
         }
 
         .footer-title {

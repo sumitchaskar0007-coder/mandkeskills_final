@@ -50,94 +50,379 @@
 .flex-grow > :not(.webinar-page) > .hero-section,
 .flex-grow > :not(.webinar-page) > .about-hero {
   min-height: auto !important;
-  padding-top: clamp(40px, 5vw, 64px) !important;
-  padding-bottom: clamp(48px, 6vw, 76px) !important;
+  padding-top: clamp(32px, 4vw, 48px) !important;
+  padding-bottom: clamp(36px, 5vw, 56px) !important;
 }
 
 .flex-grow > .home-page > .hero-section {
-  padding-bottom: 150px !important;
+  padding-bottom: 120px !important;
 }
 
 .flex-grow > .courses-page {
-  padding-top: clamp(40px, 5vw, 64px) !important;
+  padding-top: clamp(32px, 4vw, 48px) !important;
 }
 
 .flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
 }
 
 .flex-grow > :not(.webinar-page) [class$="-grid"] {
-  gap: clamp(18px, 2.4vw, 28px) !important;
+  gap: clamp(16px, 2vw, 24px) !important;
 }
 
 .flex-grow > :not(.webinar-page) .section-header,
 .flex-grow > :not(.webinar-page) .faq-header {
-  margin-bottom: clamp(26px, 3.5vw, 42px) !important;
+  margin-bottom: clamp(20px, 3vw, 32px) !important;
 }
 
 @media (max-width: 768px) {
   .flex-grow > :not(.webinar-page) > .hero-section,
   .flex-grow > :not(.webinar-page) > .about-hero {
-    padding-top: 32px !important;
-    padding-bottom: 44px !important;
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
   }
 
   .flex-grow > .home-page > .hero-section {
-    padding-bottom: 90px !important;
+    padding-bottom: 70px !important;
   }
 
   .flex-grow > .courses-page {
-    padding-top: 32px !important;
+    padding-top: 24px !important;
   }
 
   .flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
-    padding-top: 38px !important;
-    padding-bottom: 38px !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
   }
 
   .flex-grow > :not(.webinar-page) [class$="-grid"] {
-    gap: 18px !important;
+    gap: 14px !important;
+  }
+}
+
+/* Mobile-first compact layer
+   Keeps pages easier to scan on phones and laptops while preserving each page's identity. */
+html {
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-grow img {
+  content-visibility: auto;
+}
+
+.flex-grow > :not(.webinar-page) .container {
+  width: min(100% - 24px, 1180px) !important;
+  padding-inline: clamp(12px, 2vw, 22px) !important;
+}
+
+.flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+  padding-top: clamp(24px, 3.5vw, 36px) !important;
+  padding-bottom: clamp(24px, 3.5vw, 36px) !important;
+}
+
+.flex-grow > :not(.webinar-page) > .hero-section,
+.flex-grow > :not(.webinar-page) > .about-hero {
+  min-height: auto !important;
+  padding-top: clamp(20px, 3.5vw, 40px) !important;
+  padding-bottom: clamp(28px, 4vw, 44px) !important;
+}
+
+/* Smaller heading sizes with reduced weight */
+.flex-grow :is(h1, .hero-title) {
+  font-size: clamp(1.4rem, 3.8vw, 2.4rem) !important;
+  line-height: 1.15 !important;
+  font-weight: 700 !important;
+}
+
+.flex-grow :is(h2, .section-header h2, .faq-title) {
+  font-size: clamp(1.1rem, 2.6vw, 1.7rem) !important;
+  line-height: 1.2 !important;
+  font-weight: 600 !important;
+}
+
+.flex-grow :is(h3, .course-card h3, .quick-info-card h3) {
+  font-size: clamp(0.85rem, 1.8vw, 1.05rem) !important;
+  font-weight: 600 !important;
+}
+
+.flex-grow :is(h4, .testimonial-card h4) {
+  font-size: clamp(0.78rem, 1.4vw, 0.92rem) !important;
+  font-weight: 600 !important;
+}
+
+.flex-grow :is(p, li, span, a, button, input, select, textarea, label) {
+  letter-spacing: 0 !important;
+}
+
+.flex-grow :is(.section-header, .faq-header) {
+  margin-bottom: clamp(16px, 2.5vw, 24px) !important;
+}
+
+.flex-grow :is(.hero-description, .section-header p, .subtitle, .quick-info-card p) {
+  font-size: clamp(0.8rem, 1.3vw, 0.92rem) !important;
+  line-height: 1.5 !important;
+}
+
+.flex-grow :is(.card, [class$="-card"], [class$="-item"]) {
+  border-radius: 8px !important;
+}
+
+.flex-grow > :is(
+  .exim-page,
+  .insurance-page,
+  .tally-page,
+  .hacking-page,
+  .ai-page,
+  .genai-page,
+  .personality-page
+) :is(.hero-section, .hero-background-image)::after {
+  opacity: 0.78;
+}
+
+/* ============================================
+   VERTICAL STICKY BUTTON - POSITIONED HIGHER
+   ============================================ */
+.course-sticky-actions {
+  position: fixed;
+  right: 16px;
+  top: 18%;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  align-items: stretch;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+.course-sticky-name,
+.course-sticky-enquire {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  border-radius: 999px;
+  padding: 12px 8px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.course-sticky-name {
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.course-sticky-enquire {
+  background: #0ea5e9;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.course-sticky-enquire:hover {
+  background: #0284c7;
+  transform: rotate(180deg) scale(1.05);
+  box-shadow: 0 12px 28px rgba(14, 165, 233, 0.35);
+}
+
+.course-sticky-name:hover {
+  transform: rotate(180deg) scale(1.05);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.25);
+}
+
+/* Optional: Add a subtle animation */
+.course-sticky-actions {
+  animation: slideInRight 0.5s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.flex-grow > :is(
+  .exim-page,
+  .insurance-page,
+  .tally-page,
+  .hacking-page,
+  .ai-page,
+  .genai-page,
+  .personality-page
+) .faq-answer {
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Show sticky actions on larger screens */
+@media (min-width: 900px) {
+  html {
+    font-size: 15px;
+  }
+
+  .course-sticky-actions {
+    display: flex;
+  }
+}
+
+/* Responsive adjustments for medium screens */
+@media (min-width: 768px) and (max-width: 899px) {
+  .course-sticky-actions {
+    display: flex;
+    right: 12px;
+    top: 15%;
+  }
+  
+  .course-sticky-name,
+  .course-sticky-enquire {
+    padding: 10px 6px;
+    font-size: 0.62rem;
+  }
+}
+
+/* Hide on small screens (mobile) */
+@media (max-width: 767px) {
+  .course-sticky-actions {
+    display: flex;
+    right: 8px;
+    top: auto;
+    bottom: 84px;
+    gap: 6px;
+  }
+
+  .course-sticky-name,
+  .course-sticky-enquire {
+    padding: 9px 6px;
+    font-size: 0.58rem;
+  }
+}
+
+/* Every course keeps the same information layout while its hero has a
+   distinct visual identity. These overrides intentionally sit after the
+   shared neutral page treatment above. */
+.flex-grow > .exim-page > .hero-section {
+  background: linear-gradient(135deg, #082f49, #0369a1) !important;
+}
+.flex-grow > .insurance-page > .hero-section {
+  background: linear-gradient(135deg, #312e81, #6366f1) !important;
+}
+.flex-grow > .tally-page > .hero-section {
+  background: linear-gradient(135deg, #064e3b, #059669) !important;
+}
+.flex-grow > .tallyc-page > .hero-section {
+  background: linear-gradient(135deg, #581c87, #9333ea) !important;
+}
+.flex-grow > .hacking-page > .hero-section {
+  background: linear-gradient(135deg, #111827, #be123c) !important;
+}
+.flex-grow > .data-analytics-page > .hero-section {
+  background: linear-gradient(135deg, #164e63, #0891b2) !important;
+}
+.flex-grow > .genai-page > .hero-section {
+  background: linear-gradient(135deg, #4c1d95, #db2777) !important;
+}
+.flex-grow > .personality-page > .hero-section {
+  background: linear-gradient(135deg, #7c2d12, #ea580c) !important;
+}
+
+/* The Webinar promotion is intentionally hidden at every breakpoint. */
+.webinar-btn,
+.mobile-webinar-btn,
+.registration-link {
+  display: none !important;
+}
+
+@media (min-width: 1280px) {
+  html {
+    font-size: 15.5px;
+  }
+}
+
+@media (max-width: 640px) {
+  .flex-grow > :not(.webinar-page) .container {
+    width: min(100% - 18px, 1180px) !important;
   }
 }
 
 /* Compact homepage content rhythm without changing the hero composition. */
 .flex-grow > .home-page section:not(.hero-section):not(.stats-section) {
-  padding-top: 48px !important;
-  padding-bottom: 48px !important;
+  padding-top: 36px !important;
+  padding-bottom: 36px !important;
 }
 
 .home-page .courses-grid {
-  margin-top: 38px !important;
+  margin-top: 30px !important;
 }
 
 .home-page .why-choose-top {
-  gap: 38px !important;
-  margin-bottom: 38px !important;
+  gap: 30px !important;
+  margin-bottom: 30px !important;
 }
 
 .home-page .usp-grid,
 .home-page .testimonials-grid {
-  margin-top: 32px !important;
+  margin-top: 24px !important;
 }
 
 .home-page .testimonials-heading {
-  margin-bottom: 32px !important;
+  margin-bottom: 24px !important;
 }
 
 .flex-grow > .contact-page .cta-section {
-  padding-top: 16px !important;
-  padding-bottom: 16px !important;
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
 }
 
 @media (max-width: 768px) {
   .flex-grow > .home-page section:not(.hero-section):not(.stats-section) {
-    padding-top: 38px !important;
-    padding-bottom: 38px !important;
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
   }
 
   .flex-grow > .contact-page .cta-section {
-    padding-top: 14px !important;
-    padding-bottom: 14px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  
+  /* Smaller headings on mobile */
+  .flex-grow :is(h1, .hero-title) {
+    font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
+    font-weight: 700 !important;
+  }
+  
+  .flex-grow :is(h2, .section-header h2, .faq-title) {
+    font-size: clamp(1rem, 3.5vw, 1.4rem) !important;
+    font-weight: 600 !important;
+  }
+  
+  .flex-grow :is(h3, .course-card h3, .quick-info-card h3) {
+    font-size: clamp(0.78rem, 2.2vw, 0.92rem) !important;
+    font-weight: 600 !important;
+  }
+  
+  .flex-grow :is(.hero-description, .section-header p, .subtitle, .quick-info-card p) {
+    font-size: clamp(0.75rem, 2vw, 0.85rem) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .flex-grow :is(h1, .hero-title) {
+    font-size: clamp(1rem, 4.5vw, 1.4rem) !important;
+  }
+  
+  .flex-grow :is(h2, .section-header h2, .faq-title) {
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
   }
 }

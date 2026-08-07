@@ -160,7 +160,7 @@ export default function Webinar() {
                 </ul>
               </div>
               <div className="instructor-avatar">
-                <img src="/assets/images/jayprasadrao.png" alt="Jaiprasad Rao" />
+                <img src="/assets/images/jayprasadrao.png" alt="Jaiprasad Rao" loading="lazy" decoding="async" />
               </div>
             </div>
           </article>

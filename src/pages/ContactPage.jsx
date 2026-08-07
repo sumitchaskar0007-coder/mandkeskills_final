@@ -19,59 +19,32 @@ import {
   Home,
   Navigation
 } from 'lucide-react';
-
-const InquiryForm = ({ prefix = 'contact' }) => (
-  <form className="contact-form">
-    <div className="form-row">
-      <div className="form-group">
-        <label htmlFor={`${prefix}-name`}>Full Name</label>
-        <input type="text" id={`${prefix}-name`} placeholder="Enter your full name" />
-      </div>
-      <div className="form-group">
-        <label htmlFor={`${prefix}-email`}>Email Address</label>
-        <input type="email" id={`${prefix}-email`} placeholder="Enter your email" />
-      </div>
-    </div>
-    <div className="form-row">
-      <div className="form-group">
-        <label htmlFor={`${prefix}-phone`}>Phone Number</label>
-        <input type="tel" id={`${prefix}-phone`} placeholder="Enter your phone number" />
-      </div>
-      <div className="form-group">
-        <label htmlFor={`${prefix}-program`}>Program Interest</label>
-        <select id={`${prefix}-program`} defaultValue="hacking">
-          <option value="" disabled>Select a program</option>
-          <option value="exim">EXIM Trade</option>
-          <option value="insurance">Insurance Essentials</option>
-          <option value="tally">Tally Prime 7.0</option>
-          <option value="tally-comprehensive">Tally Comprehensive</option>
-          <option value="hacking">Ethical Hacking</option>
-          <option value="ai">AI &amp; Data Science</option>
-          <option value="genai">GenAI &amp; ML No-Code</option>
-          <option value="personality">Personality Development</option>
-        </select>
-      </div>
-    </div>
-    <div className="form-group full-width">
-      <label htmlFor={`${prefix}-message`}>Your Message</label>
-      <textarea id={`${prefix}-message`} rows="4" placeholder="Tell us about your requirements..." />
-    </div>
-    <button type="submit" className="submit-btn">Send Message</button>
-  </form>
-);
+import InquiryForm from '../components/InquiryForm';
 
 const ContactPage = () => {
+  // API URL - Use import.meta.env for Vite
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/contact';
+
+  const handleFormSubmit = (data) => {
+    console.log('Form submitted:', data);
+    // You can add additional analytics or tracking here
+  };
+
   return (
     <div className="contact-page">
       {/* Hero Section */}
       <section className="hero-section">
         <div className="hero-background">
-          <img src="/assets/images/cont.png" alt="Contact Us Background" />
+          <img src="/assets/images/cont.png" alt="Contact Us Background" loading="eager" decoding="async" fetchPriority="high" />
         </div>
         <div className="container">
           <div className="hero-grid">
             <div className="hero-content hero-form-content fade-up" id="contact-form">
-              <InquiryForm prefix="hero" />
+              <InquiryForm 
+                prefix="hero" 
+                onSubmit={handleFormSubmit}
+                apiUrl={API_URL}
+              />
             </div>
           </div>
         </div>
@@ -125,12 +98,7 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-    
-
-      <style jsx>{`
-        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-
+      <style>{`
         .contact-page {
           font-family: "Poppins", "Times New Roman", serif;
           overflow-x: hidden;
@@ -372,140 +340,31 @@ const ContactPage = () => {
           gap: 12px;
         }
 
-        /* ABOUT STATS */
-        .about-stats-section {
-          padding: 80px 0 120px;
-          background: #f8fafc;
-        }
-
-        .about-stats-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 60px;
-          align-items: center;
-        }
-
-        .section-tag {
-          color: #1a56db;
-          font-weight: 700;
-          font-size: 15.7px;
-          text-transform: uppercase;
-          letter-spacing: 1px;
-        }
-
-        .about-text h2 {
-          font-size: 2.5rem;
-          margin: 15px 0 20px;
-          color: #1a2332;
-          font-family: "Times New Roman", "Poppins", serif;
-        }
-
-        .about-text p {
-          color: #1a2332;
-          line-height: 1.8;
-          font-size: 17.9px;
-        }
-
-        .about-features {
-          margin-top: 25px;
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .about-feature {
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          font-size: 16.8px;
-          color: #1a2332;
-        }
-
-        .about-feature svg {
-          color: #1a56db;
-          flex-shrink: 0;
-        }
-
-        .stats-showcase {
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 25px;
-        }
-
-        .stats-showcase-card {
-          background: #ffffff;
-          padding: 35px 20px;
-          border-radius: 20px;
+        /* CTA */
+        .cta-section {
+          padding: 18px 20px !important;
           text-align: center;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-          transition: 0.4s;
-          border: 1px solid #e2e8f0;
+          background: linear-gradient(135deg, #020617, #0f172a);
+          color: #ffffff;
         }
 
-        .stats-showcase-card:hover {
-          transform: translateY(-8px);
-          border-color: #1a56db;
-        }
-
-        .stats-showcase-number {
-          font-size: 2.5rem;
-          font-weight: 800;
-          color: #1a56db;
+        .cta-section h2 {
+          margin: 0;
+          font-size: 2.25rem;
+          line-height: 1.15;
           font-family: "Times New Roman", "Poppins", serif;
+          color: #ffffff;
         }
 
-        .stats-showcase-card p {
-          color: #1a2332;
-          font-size: 15.7px;
-          margin-top: 8px;
-        }
-
-        /* CONTACT FORM */
-        .contact-form-section {
-          padding: 120px 0;
-          background: #ffffff;
-        }
-
-        .section-header {
-          text-align: center;
-          max-width: 800px;
-          margin: auto;
-        }
-
-        .section-header span {
-          color: #1a56db;
-          font-weight: 700;
+        .cta-section p {
+          max-width: 700px;
+          margin: 8px auto 0;
+          color: #cbd5e1;
+          line-height: 1.4;
           font-family: "Poppins", sans-serif;
         }
 
-        .section-header h2 {
-          font-size: 3rem;
-          margin-top: 15px;
-          color: #1a2332;
-          font-family: "Times New Roman", "Poppins", serif;
-        }
-
-        .section-header p {
-          margin-top: 20px;
-          color: #1a2332;
-          line-height: 1.8;
-          font-family: "Poppins", sans-serif;
-        }
-
-        .contact-form-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 50px;
-          margin-top: 70px;
-        }
-
-        .contact-form-wrapper {
-          background: #ffffff;
-          padding: 40px;
-          border-radius: 24px;
-          border: 1px solid #e2e8f0;
-        }
-
+        /* Form styles */
         .contact-form {
           display: flex;
           flex-direction: column;
@@ -537,10 +396,6 @@ const ContactPage = () => {
           font-size: 15.7px;
         }
 
-        .form-group label svg {
-          color: #1a56db;
-        }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -553,14 +408,6 @@ const ContactPage = () => {
           background: #ffffff;
           color: #1a2332;
           accent-color: #1a56db;
-        }
-
-        .form-group input:-webkit-autofill,
-        .form-group input:-webkit-autofill:hover,
-        .form-group input:-webkit-autofill:focus {
-          -webkit-text-fill-color: #1a2332;
-          -webkit-box-shadow: 0 0 0 1000px #ffffff inset;
-          box-shadow: 0 0 0 1000px #ffffff inset;
         }
 
         .form-group input:focus,
@@ -589,186 +436,8 @@ const ContactPage = () => {
           box-shadow: 0 15px 35px rgba(26, 86, 219, 0.25);
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover:not(:disabled) {
           transform: translateY(-5px);
-        }
-
-        .contact-map-wrapper {
-          display: flex;
-          flex-direction: column;
-          gap: 25px;
-        }
-
-        .map-container {
-          background: #f8fafc;
-          border-radius: 24px;
-          padding: 40px;
-          border: 1px solid #e2e8f0;
-          min-height: 300px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .map-placeholder {
-          text-align: center;
-        }
-
-        .map-pin {
-          color: #1a56db;
-          margin-bottom: 15px;
-        }
-
-        .map-placeholder h3 {
-          font-size: 22.4px;
-          color: #1a2332;
-          font-family: "Times New Roman", "Poppins", serif;
-          margin-bottom: 10px;
-        }
-
-        .map-placeholder p {
-          color: #1a2332;
-          font-size: 15.7px;
-          line-height: 1.8;
-          margin-bottom: 20px;
-        }
-
-        .map-link {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          color: #1a56db;
-          font-weight: 600;
-          text-decoration: none;
-          transition: 0.3s;
-        }
-
-        .map-link:hover {
-          gap: 12px;
-        }
-
-        .contact-details {
-          display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
-          gap: 20px;
-        }
-
-        .contact-detail-item {
-          display: flex;
-          align-items: center;
-          gap: 15px;
-          padding: 20px;
-          background: #f8fafc;
-          border-radius: 16px;
-          border: 1px solid #e2e8f0;
-          transition: 0.3s;
-        }
-
-        .contact-detail-item:hover {
-          border-color: #1a56db;
-          transform: translateY(-5px);
-        }
-
-        .detail-icon {
-          color: #1a56db;
-          flex-shrink: 0;
-        }
-
-        .contact-detail-item h4 {
-          font-size: 15.7px;
-          font-weight: 600;
-          color: #1a2332;
-          margin: 0;
-        }
-
-        .contact-detail-item p {
-          font-size: 14.6px;
-          color: #1a2332;
-          margin: 0;
-        }
-
-        /* CTA */
-        .cta-section {
-          padding: 18px 20px !important;
-          text-align: center;
-          background: linear-gradient(135deg, #020617, #0f172a);
-          color: #ffffff;
-        }
-
-        .cta-section h2 {
-          margin: 0;
-          font-size: 2.25rem;
-          line-height: 1.15;
-          font-family: "Times New Roman", "Poppins", serif;
-          color: #ffffff;
-        }
-
-        .cta-section p {
-          max-width: 700px;
-          margin: 8px auto 0;
-          color: #cbd5e1;
-          line-height: 1.4;
-          font-family: "Poppins", sans-serif;
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 20px;
-          justify-content: center;
-          flex-wrap: wrap;
-          margin-top: 30px;
-        }
-
-        .cta-primary {
-          background: linear-gradient(135deg, #1a56db, #1e40af);
-          color: #ffffff;
-          border: none;
-          padding: 16px 35px;
-          border-radius: 14px;
-          font-weight: 600;
-          cursor: pointer;
-          display: inline-flex;
-          gap: 10px;
-          align-items: center;
-          transition: 0.4s;
-          font-family: "Poppins", sans-serif;
-          box-shadow: 0 15px 35px rgba(26, 86, 219, 0.3);
-          text-decoration: none;
-        }
-
-        .cta-primary:hover {
-          transform: translateY(-5px);
-        }
-
-        .cta-secondary {
-          background: rgba(255,255,255,0.1);
-          border: 1px solid rgba(255,255,255,0.2);
-          color: #ffffff;
-          padding: 16px 35px;
-          border-radius: 14px;
-          font-weight: 600;
-          cursor: pointer;
-          display: inline-flex;
-          gap: 10px;
-          align-items: center;
-          transition: 0.4s;
-          font-family: "Poppins", sans-serif;
-          text-decoration: none;
-        }
-
-        .cta-secondary:hover {
-          background: rgba(255,255,255,0.2);
-        }
-
-        /* FOOTER */
-        .footer {
-          background: #020617;
-          padding: 30px 0;
-          text-align: center;
-          color: #64748b;
-          font-size: 15.7px;
-          border-top: 1px solid rgba(255,255,255,0.05);
-          font-family: "Poppins", sans-serif;
         }
 
         /* RESPONSIVE */
@@ -782,21 +451,7 @@ const ContactPage = () => {
             font-size: 3rem;
           }
 
-          .about-stats-grid {
-            grid-template-columns: 1fr;
-            gap: 40px;
-          }
-
-          .contact-form-grid {
-            grid-template-columns: 1fr;
-            gap: 30px;
-          }
-
           .quick-info-grid {
-            grid-template-columns: 1fr 1fr;
-          }
-
-          .contact-details {
             grid-template-columns: 1fr 1fr;
           }
         }
@@ -830,24 +485,11 @@ const ContactPage = () => {
             justify-content: center;
           }
 
-          .section-header h2,
-          .cta-section h2 {
-            font-size: 2rem;
-          }
-
           .quick-info-grid {
             grid-template-columns: 1fr;
           }
 
-          .stats-showcase {
-            grid-template-columns: 1fr 1fr;
-          }
-
           .form-row {
-            grid-template-columns: 1fr;
-          }
-
-          .contact-details {
             grid-template-columns: 1fr;
           }
 
@@ -858,17 +500,9 @@ const ContactPage = () => {
           .quick-info-card {
             padding: 25px;
           }
-
-          .contact-form-wrapper {
-            padding: 25px;
-          }
         }
 
         @media (max-width: 480px) {
-          .stats-showcase {
-            grid-template-columns: 1fr;
-          }
-
           .hero-title {
             font-size: 2rem;
           }
@@ -877,28 +511,12 @@ const ContactPage = () => {
             font-size: 1rem;
           }
 
-          .hero-badge {
-            font-size: 13.4px;
-            padding: 8px 16px;
-          }
-
           .hero-section {
             min-height: 70vh;
           }
 
           .hero-content {
             padding: 20px;
-          }
-
-          .cta-buttons {
-            flex-direction: column;
-            align-items: center;
-          }
-
-          .cta-primary,
-          .cta-secondary {
-            width: 100%;
-            justify-content: center;
           }
         }
       `}</style>

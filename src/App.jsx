@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
-import './App.css'
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import "./App.css";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Courses from "./pages/Courses";
@@ -10,23 +11,51 @@ import TallyPage from "./pages/TallyPage";
 import TallyCPage from "./pages/TallyCPage";
 import HackingPage from "./pages/HackingPage";
 import GenAIPage from "./pages/GenAIPage";
-import AIPage from "./pages/AIPage";
+import DataAnalytics from "./pages/DataAnalytics";
 import PersonalityPage from "./pages/PersonalityPage";
 import About from "./pages/About";
-// import Services from "./pages/Services";
 import Contact from "./pages/ContactPage";
 import Webinar from "./pages/Webinar";
 import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
+
+const courseNames = {
+  "/courses/exim": "EXIM Trade",
+  "/courses/insurance": "Insurance",
+  "/courses/tally": "Tally Prime",
+  "/courses/tally-c": "Tally Certification",
+  "/courses/ethical-hacking": "Cyber Security",
+  "/courses/data-analytics": "Data Analytics",
+  "/courses/genai-ml": "No-Code AI",
+  "/courses/personality": "Personality Development",
+};
+
+function CourseStickyActions() {
+  const location = useLocation();
+
+  const courseName = courseNames[location.pathname];
+
+  if (!courseName) return null;
+
+  return (
+    <div className="course-sticky-actions">
+      <div className="course-sticky-name">
+        {courseName}
+      </div>
+
+      <Link to="/contact" className="course-sticky-enquire">
+        Enquire Now
+      </Link>
+    </div>
+  );
+}
+
 function App() {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
-      
-      {/* Navbar */}
       <Navbar />
       <ScrollToTop />
 
-      {/* Main Content */}
       <div className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -36,17 +65,17 @@ function App() {
           <Route path="/courses/tally" element={<TallyPage />} />
           <Route path="/courses/tally-c" element={<TallyCPage />} />
           <Route path="/courses/ethical-hacking" element={<HackingPage />} />
-          <Route path="/courses/ai-data-science" element={<AIPage />} />
+          <Route path="/courses/data-analytics" element={<DataAnalytics />} />
           <Route path="/courses/genai-ml" element={<GenAIPage />} />
+          <Route path="/courses/personality" element={<PersonalityPage />} />
           <Route path="/about" element={<About />} />
-          {/* <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} /> */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/webinar" element={<Webinar />} />
-          <Route path="/courses/personality" element={<PersonalityPage />} />
         </Routes>
-      </div> 
-      {/* Footer */}
+      </div>
+
+      <CourseStickyActions />
+
       <Footer />
       <WhatsAppButton />
     </div>

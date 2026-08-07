@@ -6,9 +6,9 @@ const courses = [
   { id: 2, title: "Insurance Essentials", icon: "🛡️", tag: "Finance", path: "/courses/insurance" },
   { id: 3, title: "Tally Prime 7.0", icon: "📊", tag: "Accounting", path: "/courses/tally" },
   { id: 4, title: "Tally Comprehensive (All 3 Levels)", icon: "📈", tag: "Accounting", path: "/courses/tally-c" },
-  { id: 5, title: "Certified Ethical Hacking", icon: "🔐", tag: "Cybersecurity", path: "/courses/ethical-hacking" },
-  { id: 6, title: "AI & Data Science Excellence", icon: "🤖", tag: "Technology", path: "/courses/ai-data-science" },
-  { id: 7, title: "GenAI & ML — No-Code", icon: "✨", tag: "AI / ML", path: "/courses/genai-ml" },
+  { id: 5, title: "Cyber Security", icon: "🔐", tag: "Cybersecurity", path: "/courses/ethical-hacking" },
+  { id: 6, title: "Data Analytics", icon: "🤖", tag: "Technology", path: "/courses/data-analytics" },
+  { id: 7, title: "No-Code AI", icon: "✨", tag: "AI / ML", path: "/courses/genai-ml" },
   { id: 8, title: "Grooming for Personality Development", icon: "🌟", tag: "Soft Skills", path: "/courses/personality" },
 ];
 
@@ -106,22 +106,20 @@ export default function Navbar() {
     setCoursesOpen(false);
   };
 
-  // Function to handle navigation with scroll to top (matching Footer behavior)
-  const handleNavigation = (path) => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-    navigate(path);
-    setCoursesOpen(false);
-    setMobileOpen(false);
-  };
+  const shortCourseName = (course) => ({
+    1: "EXIM Trade",
+    2: "Insurance",
+    3: "Tally Prime",
+    4: "Tally Certification",
+    5: "Cyber Security",
+    6: "Data Analytics",
+    7: "No Code AI",
+    8: "Personality Development",
+  }[course.id] || course.title);
 
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         body { background: #ffffff; }
@@ -153,7 +151,7 @@ export default function Navbar() {
           max-width: 1400px;
           margin: 0 auto;
           padding: 0 40px;
-          height: 96px;
+          height: 76px;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -173,8 +171,8 @@ export default function Navbar() {
         }
 
         .logo-img-container {
-          width: 240px;
-          height: 90px;
+          width: 180px;
+          height: 68px;
           overflow: hidden;
           display: flex;
           align-items: center;
@@ -204,7 +202,7 @@ export default function Navbar() {
           position: relative;
           padding: 10px 18px;
           border-radius: 12px;
-          font-size: 17.9px;
+          font-size: 14px;
           font-weight: 500;
           color: #334155;
           cursor: pointer;
@@ -482,11 +480,11 @@ export default function Navbar() {
           top: calc(100% + 14px);
           left: 50%;
           transform: translateX(-50%);
-          width: min(1000px, 96vw);
+          width: min(720px, 94vw);
           background: #ffffff;
           border: 1px solid rgba(56,189,248,0.22);
-          border-radius: 24px;
-          padding: 28px;
+          border-radius: 16px;
+          padding: 14px;
           box-shadow: 0 24px 64px rgba(15,23,42,0.14), 0 4px 16px rgba(56,189,248,0.1);
           z-index: 999;
           animation: dropIn 0.2s cubic-bezier(0.4,0,0.2,1) both;
@@ -501,8 +499,8 @@ export default function Navbar() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          margin-bottom: 20px;
-          padding-bottom: 16px;
+          margin-bottom: 10px;
+          padding-bottom: 10px;
           border-bottom: 1px solid #E2E8F0;
         }
 
@@ -522,31 +520,37 @@ export default function Navbar() {
 
         .courses-grid {
           display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 12px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 8px;
         }
 
         .course-card {
           background: #F8FAFC;
           border: 1px solid #E2E8F0;
-          border-radius: 14px;
-          padding: 16px 14px;
+          border-radius: 10px;
+          padding: 10px 12px;
           cursor: pointer;
           transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
           display: flex;
           flex-direction: column;
-          gap: 8px;
+          gap: 4px;
           text-decoration: none;
         }
 
         .course-card:hover {
           background: #F0F9FF;
           border-color: #7DD3FC;
-          transform: translateY(-4px);
+          transform: translateY(-2px);
           box-shadow: 0 8px 28px rgba(56,189,248,0.15);
         }
 
         .course-icon { font-size: 24.6px; line-height: 1; }
+
+        .course-icon,
+        .course-tag,
+        .course-arrow {
+          display: none;
+        }
 
         .course-tag {
           display: inline-flex;
@@ -563,7 +567,7 @@ export default function Navbar() {
         }
 
         .course-name {
-          font-size: 14.6px;
+          font-size: 13px;
           font-weight: 600;
           color: #1E293B;
           line-height: 1.4;
@@ -1208,7 +1212,7 @@ export default function Navbar() {
                   <div className="mega-dropdown" ref={dropdownRef}>
                     <div className="dropdown-header">
                       <div className="dropdown-title">Our Programmes</div>
-                      <div className="dropdown-subtitle">8 Industry-aligned Certifications</div>
+                      <div className="dropdown-subtitle">Industry-aligned Certifications</div>
                     </div>
 
                     <div className="courses-grid">
@@ -1219,9 +1223,7 @@ export default function Navbar() {
                           className="course-card"
                           onClick={() => setCoursesOpen(false)}
                         >
-                          <span className="course-icon" aria-hidden="true">{c.icon}</span>
-                          <span className="course-tag">{c.tag}</span>
-                          <span className="course-name">{c.title}</span>
+                          <span className="course-name">{shortCourseName(c)}</span>
                         </Link>
                       ))}
                     </div>
@@ -1335,36 +1337,13 @@ export default function Navbar() {
                   className="mobile-course-item"
                   onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
                 >
-                  <span>{c.title}</span>
+                  <span>{shortCourseName(c)}</span>
                 </Link>
               ))}
             </div>
           )}
 
-          <Link
-            to="/webinar"
-            className={`mobile-nav-item ${activePage === "Webinar" ? "active" : ""}`}
-            onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}
-          >
-            <div className="mobile-nav-item-left">
-              <span>Webinar</span>
-            </div>
-          </Link>
-
           <div className="mobile-divider" />
-
-          {/* Mobile Webinar Button - matching Footer style */}
-          <Link
-            to="/webinar"
-            className="mobile-webinar-btn"
-            onClick={() => { 
-              setMobileOpen(false); 
-              setMobileCoursesOpen(false);
-              handleNavigation('/webinar');
-            }}
-          >
-            Webinar
-          </Link>
 
           <button className="mobile-cta" onClick={openInterestForm}>
             Apply Now — Express Your Interest →
