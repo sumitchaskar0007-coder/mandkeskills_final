@@ -49,7 +49,7 @@ export default function AIBootcamp() {
           <div className="abc-visual">
             <img src="/assets/images/ai_i.png" alt="Friendly AI robot with glowing teal eyes" width="640" height="640" fetchPriority="high" />
             <div className="abc-visual-caption"><span>AI learning made simple.</span><strong>Learn it. Build it. Use it.</strong></div>
-            <div className="abc-seat-badge"><UsersRound aria-hidden="true" /><span>Only <strong>25 seats</strong><br />per batch</span></div>
+            <div className="abc-seat-badge"><UsersRound aria-hidden="true" /><div className="abc-seat-copy"><span>Only <strong>25 seats</strong></span><span>per batch</span></div></div>
           </div>
         </section>
 

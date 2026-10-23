@@ -8,19 +8,19 @@
 .ai-bootcamp-page .abc-partner-cross { font-size:26px; color:#748494; }
 .ai-bootcamp-page .abc-codebyte { color:var(--abc-teal); font-size:23px; font-weight:700; letter-spacing:-.7px; }
 .ai-bootcamp-page .abc-hero { display:grid; grid-template-columns:1.15fr 1fr; background:var(--abc-navy); color:#fff; }
-.ai-bootcamp-page .abc-hero-copy { padding:32px 0 32px 48px; position:relative; z-index:1; }
+.ai-bootcamp-page .abc-hero-copy { padding:24px 0 24px 48px; position:relative; z-index:1; }
 .ai-bootcamp-page .abc-eyebrow { display:inline-flex; align-items:center; gap:8px; color:#9dedee; font-size:12px; font-weight:700; letter-spacing:.6px; }
 .ai-bootcamp-page .abc-eyebrow svg { width:18px; }
 .ai-bootcamp-page h1 { font-size:clamp(40px,5.1vw,65px); line-height:1.08; letter-spacing:-2.5px; font-weight:800; margin:20px 0; }
 .ai-bootcamp-page h1>span { color:var(--abc-cyan); }
 .ai-bootcamp-page h1 small { display:block; font-size:21px; letter-spacing:0; margin-top:12px; font-weight:600; }
 .ai-bootcamp-page .abc-hero-tagline { font-size:24px; font-weight:700; margin-bottom:14px; }
-.ai-bootcamp-page .abc-hero-tagline strong { color:var(--abc-pink); }
+.ai-bootcamp-page .abc-hero-tagline strong { color:var(--abc-cyan); }
 .ai-bootcamp-page .abc-prerequisite { display:block; margin-top:10px; color:var(--abc-cyan); font-weight:800; }
 .ai-bootcamp-page .abc-intro { max-width:510px; color:#d2e3ee; font-size:15px; }
-.ai-bootcamp-page .abc-hero-date { display:flex; gap:10px; align-items:center; margin:23px 0; font-size:19px; font-weight:700; }
+.ai-bootcamp-page .abc-hero-date { display:flex; gap:10px; align-items:center; margin:16px 0; font-size:19px; font-weight:700; }
 .ai-bootcamp-page .abc-hero-date svg { color:var(--abc-cyan); width:22px; flex-shrink:0; }
-.ai-bootcamp-page .abc-hero-offer { margin:0 0 22px; color:#ffbb98; font-size:14px; }
+.ai-bootcamp-page .abc-hero-offer { margin:0 0 16px; color:#ffbb98; font-size:14px; }
 .ai-bootcamp-page .abc-hero-offer strong { color:#fff; margin-left:5px; font-size:20px; }
 .ai-bootcamp-page .abc-hero-offer span { display:block; font-size:11px; margin-top:4px; color:#d2e3ee; }
 .ai-bootcamp-page .abc-actions { display:flex; flex-wrap:wrap; align-items:center; gap:16px; }
@@ -28,29 +28,31 @@
 .ai-bootcamp-page .abc-button:hover { background:#c50057; transform:translateY(-2px); }
 .ai-bootcamp-page .abc-button svg { width:20px; flex-shrink:0; }
 .ai-bootcamp-page .abc-details-link { color:#c1f5f5; text-underline-offset:5px; font-size:12px; }
-.ai-bootcamp-page .abc-visual { position:relative; display:flex; flex-direction:column; justify-content:center; min-width:0; background:radial-gradient(ellipse,#0f5d7e4a,transparent 70%); padding:28px; }
-.ai-bootcamp-page .abc-visual img { display:block; width:100%; height:auto; border-radius:24px; box-shadow:0 0 60px #21c7ea18; }
-.ai-bootcamp-page .abc-visual-caption { text-align:center; margin-top:20px; color:#b9dce8; font-size:13px; }
+.ai-bootcamp-page .abc-visual { position:relative; display:flex; flex-direction:column; justify-content:center; min-width:0; background:radial-gradient(ellipse,#0f5d7e4a,transparent 70%); padding:20px 28px; }
+.ai-bootcamp-page .abc-visual img { display:block; width:100%; max-width:420px; align-self:center; height:auto; border-radius:24px; box-shadow:0 0 60px #21c7ea18; }
+.ai-bootcamp-page .abc-visual-caption { text-align:center; margin-top:12px; color:#b9dce8; font-size:13px; }
 .ai-bootcamp-page .abc-visual-caption strong { display:block; font-size:21px; color:#66e5e6; margin-top:5px; }
-.ai-bootcamp-page .abc-seat-badge { display:flex; align-items:center; gap:12px; align-self:center; margin-top:16px; padding:10px 18px; border-radius:10px; background:var(--abc-pink); color:#fff; font-size:12px; line-height:1.5; }
-.ai-bootcamp-page .abc-seat-badge svg { width:25px; color:#fff; }
-.ai-bootcamp-page .abc-seat-badge strong { color:#fff; font-size:17px; }
-.ai-bootcamp-page .abc-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); background:#eaf8f8; border-bottom:1px solid #c9e9e9; padding:18px 25px; }
+.ai-bootcamp-page .abc-seat-badge { display:flex; align-items:center; justify-content:center; gap:16px; align-self:center; width:min(100%,354px); margin-top:12px; padding:16px 18px; border:1px solid #28798d; border-radius:18px; background:#0d344b; color:#fff; line-height:1.35; }
+.ai-bootcamp-page .abc-seat-badge svg { width:38px; height:38px; flex:0 0 38px; color:var(--abc-cyan); }
+.ai-bootcamp-page .abc-seat-badge strong { color:#ffac83; font-size:clamp(25px,2.4vw,30px); font-weight:800; }
+.ai-bootcamp-page .abc-seat-copy { display:flex; flex-direction:column; gap:3px; text-align:left; font-size:clamp(18px,1.7vw,22px); }
+.ai-bootcamp-page .abc-seat-copy>span:first-child { white-space:nowrap; }
+.ai-bootcamp-page .abc-facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); background:#eaf8f8; border-bottom:1px solid #c9e9e9; padding:14px 25px; }
 .ai-bootcamp-page .abc-facts>div { display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 12px; border-right:1px solid #bddfdf; gap:3px; }
 .ai-bootcamp-page .abc-facts>div:last-child { border:0; }
 .ai-bootcamp-page .abc-facts svg { width:27px; height:27px; color:var(--abc-teal); margin-bottom:9px; }
 .ai-bootcamp-page .abc-facts strong { font-size:16px; }
 .ai-bootcamp-page .abc-facts span { font-size:12px; color:#426070; }
 .ai-bootcamp-page .abc-facts .abc-anywhere { color:#b33611; font-weight:800; background:#fff0e7; padding:3px 8px; border-radius:4px; }
-.ai-bootcamp-page .abc-section { padding:28px 48px; }
-.ai-bootcamp-page .abc-section-heading { max-width:900px; margin-bottom:18px; }
+.ai-bootcamp-page .abc-section { padding:16px 48px; }
+.ai-bootcamp-page .abc-section-heading { max-width:900px; margin-bottom:12px; }
 .ai-bootcamp-page .abc-kicker { display:block; color:var(--abc-teal); text-transform:uppercase; letter-spacing:1.6px; font-size:13px; font-weight:800; margin-bottom:8px; }
-.ai-bootcamp-page h2 { font-size:clamp(30px,3.5vw,42px); line-height:1.2; font-weight:800; letter-spacing:-1px; margin-bottom:13px; }
+.ai-bootcamp-page h2 { font-size:clamp(30px,3.5vw,42px); line-height:1.2; font-weight:800; letter-spacing:-1px; margin-bottom:10px; }
 .ai-bootcamp-page h2 span { color:var(--abc-teal); }
 .ai-bootcamp-page .abc-section-heading>p,.ai-bootcamp-page .abc-audience>p { color:#506579; font-size:14px; }
 .ai-bootcamp-page .abc-schedule { scroll-margin-top:110px; }
 .ai-bootcamp-page .abc-batch-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.ai-bootcamp-page .abc-batch { border:1px solid #b7dcdc; border-radius:12px; padding:20px; background:linear-gradient(130deg,#f1fbfb,#fff); }
+.ai-bootcamp-page .abc-batch { border:1px solid #b7dcdc; border-radius:12px; padding:16px; background:linear-gradient(130deg,#f1fbfb,#fff); }
 .ai-bootcamp-page .abc-batch>div { display:flex; align-items:center; gap:10px; margin-bottom:12px; color:var(--abc-teal); }
 .ai-bootcamp-page .abc-batch h3 { font-size:18px; font-weight:700; }
 .ai-bootcamp-page .abc-batch>strong { font-size:28px; font-weight:800; line-height:1.3; }
@@ -58,9 +60,9 @@
 .ai-bootcamp-page .abc-batch p { color:#b63c16; font-size:12px; font-weight:700; margin-top:10px; }
 .ai-bootcamp-page .abc-timezone { margin-top:12px; color:#566b7d; font-size:11px; }
 .ai-bootcamp-page .abc-learning { background:#f3f7fb; }
-.ai-bootcamp-page .abc-learning-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
-.ai-bootcamp-page .abc-learning-card { padding:20px; border:1px solid #dfe8ee; background:#fff; border-radius:12px; }
-.ai-bootcamp-page .abc-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.ai-bootcamp-page .abc-learning-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+.ai-bootcamp-page .abc-learning-card { padding:16px; border:1px solid #dfe8ee; background:#fff; border-radius:12px; }
+.ai-bootcamp-page .abc-card-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
 .ai-bootcamp-page .abc-card-top svg { color:var(--abc-teal); width:27px; height:27px; }
 .ai-bootcamp-page .abc-card-top span { font-size:24px; font-weight:800; color:#cad9e3; }
 .ai-bootcamp-page .abc-learning-card h3 { font-size:18px; line-height:1.4; margin-bottom:10px; font-weight:700; }
@@ -68,10 +70,10 @@
 .ai-bootcamp-page .abc-tools { background:#072b46; color:#fff; }
 .ai-bootcamp-page .abc-tools .abc-kicker,.ai-bootcamp-page .abc-tools h2 span { color:#69e6e8; }
 .ai-bootcamp-page .abc-tools .abc-section-heading>p { color:#c1d7e6; }
-.ai-bootcamp-page .abc-tools ul { display:flex; flex-wrap:wrap; gap:11px; margin:0; padding:0; list-style:none; }
-.ai-bootcamp-page .abc-tools li { padding:10px 16px; border:1px solid #4ea7b570; background:#ffffff09; border-radius:7px; color:#e0fbfc; font-weight:600; font-size:13px; }
-.ai-bootcamp-page .abc-results { display:grid; grid-template-columns:.85fr 1.15fr; gap:30px; align-items:start; }
-.ai-bootcamp-page .abc-certificate { display:flex; gap:15px; padding:22px; margin-top:20px; background:#eaf8f8; border:1px solid #bee4e4; border-radius:12px; }
+.ai-bootcamp-page .abc-tools ul { display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+.ai-bootcamp-page .abc-tools li { padding:8px 14px; border:1px solid #4ea7b570; background:#ffffff09; border-radius:7px; color:#e0fbfc; font-weight:600; font-size:13px; }
+.ai-bootcamp-page .abc-results { display:grid; grid-template-columns:.85fr 1.15fr; gap:22px; align-items:start; }
+.ai-bootcamp-page .abc-certificate { display:flex; gap:12px; padding:16px; margin-top:14px; background:#eaf8f8; border:1px solid #bee4e4; border-radius:12px; }
 .ai-bootcamp-page .abc-certificate>svg { flex:0 0 35px; width:35px; height:35px; color:var(--abc-teal); }
 .ai-bootcamp-page .abc-certificate strong { font-size:14px; line-height:1.4; display:block; }
 .ai-bootcamp-page .abc-certificate p { font-size:12px; color:#506579; margin-top:8px; }
@@ -81,10 +83,10 @@
 .ai-bootcamp-page .abc-outcomes li>span { color:#c54419; font-weight:800; font-size:15px; }
 .ai-bootcamp-page .abc-outcomes p { color:#40596c; font-size:13px; }
 .ai-bootcamp-page .abc-audience { text-align:center; background:#f3f8fb; }
-.ai-bootcamp-page .abc-audience ul { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; margin:16px 0 0; padding:0; list-style:none; }
+.ai-bootcamp-page .abc-audience ul { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin:12px 0 0; padding:0; list-style:none; }
 .ai-bootcamp-page .abc-audience li { display:flex; align-items:center; gap:8px; padding:8px 16px; border:1px solid #d4e5eb; border-radius:30px; background:#fff; font-size:13px; font-weight:600; }
 .ai-bootcamp-page .abc-audience svg { width:16px; color:var(--abc-teal); }
-.ai-bootcamp-page .abc-booking { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:28px; margin:22px 32px; padding:28px; border-radius:18px; background:linear-gradient(125deg,#05243e,#07535d); color:#fff; }
+.ai-bootcamp-page .abc-booking { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:22px; margin:14px 32px; padding:20px; border-radius:18px; background:linear-gradient(125deg,#05243e,#07535d); color:#fff; }
 .ai-bootcamp-page .abc-booking h2 { font-size:42px; }
 .ai-bootcamp-page .abc-booking h2 span,.ai-bootcamp-page .abc-booking .abc-kicker { color:#66e5e6; }
 .ai-bootcamp-page .abc-booking-copy>p { color:#cee3eb; font-size:14px; }
@@ -98,32 +100,32 @@
 .ai-bootcamp-page .abc-deadline { font-size:11px; color:#506579; margin:12px 0 18px; }
 .ai-bootcamp-page .abc-price-card .abc-button { width:100%; }
 .ai-bootcamp-page .abc-checkout-note { font-size:10px; margin-top:11px; color:#607285; }
-.ai-bootcamp-page .abc-signoff { padding:0 26px 28px; text-align:center; color:#506579; font-size:11px; }
+.ai-bootcamp-page .abc-signoff { padding:0 26px 18px; text-align:center; color:#506579; font-size:11px; }
 .ai-bootcamp-page .abc-signoff span { color:var(--abc-teal); font-weight:700; }
 .ai-bootcamp-nav { display:inline-flex; align-items:center; justify-content:center; background:var(--abc-pink, #e60065); color:#fff !important; padding:11px 16px; border-radius:7px; font-size:13px; line-height:1.4; font-weight:700; text-decoration:none; white-space:nowrap; }
 .ai-bootcamp-nav:hover { background:#c50057; }
 .ai-bootcamp-nav:focus-visible { outline:3px solid #087e8b; outline-offset:4px; }
 .mobile-menu .ai-bootcamp-nav { margin:8px 0 16px; width:100%; }
-@media(max-width:1000px) { .ai-bootcamp-page .abc-partners { padding:16px 28px; }.ai-bootcamp-page .abc-hero-copy { padding:28px 0 28px 28px; }.ai-bootcamp-page .abc-section { padding:24px 28px; }.ai-bootcamp-page .abc-learning-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.ai-bootcamp-page .abc-results { gap:25px; }.ai-bootcamp-page .abc-booking { margin:24px; padding:26px; gap:22px; } }
+@media(max-width:1000px) { .ai-bootcamp-page .abc-partners { padding:16px 28px; }.ai-bootcamp-page .abc-hero-copy { padding:22px 0 22px 28px; }.ai-bootcamp-page .abc-section { padding:16px 28px; }.ai-bootcamp-page .abc-learning-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }.ai-bootcamp-page .abc-results { gap:25px; }.ai-bootcamp-page .abc-booking { margin:14px 24px; padding:20px; gap:20px; } }
 @media(max-width:700px) {
   .ai-bootcamp-page { padding:0; }
   .ai-bootcamp-page .abc-partners { gap:14px; padding:16px 20px; }
   .ai-bootcamp-page .abc-codebyte { font-size:20px; }
   .ai-bootcamp-page .abc-hero { grid-template-columns:1fr; }
-  .ai-bootcamp-page .abc-hero-copy { padding:28px 24px 12px; }
+  .ai-bootcamp-page .abc-hero-copy { padding:22px 24px 12px; }
   .ai-bootcamp-page h1 { font-size:52px; }
-  .ai-bootcamp-page .abc-visual { padding:18px 24px 24px; }
+  .ai-bootcamp-page .abc-visual { padding:12px 24px 18px; }
   .ai-bootcamp-page .abc-visual img { max-width:420px; margin:auto; }
-  .ai-bootcamp-page .abc-facts { grid-template-columns:1fr 1fr; gap:18px 0; padding:18px 10px; }
+  .ai-bootcamp-page .abc-facts { grid-template-columns:1fr 1fr; gap:14px 0; padding:14px 10px; }
   .ai-bootcamp-page .abc-facts>div:nth-child(2) { border:0; }
-  .ai-bootcamp-page .abc-section { padding:22px; }
+  .ai-bootcamp-page .abc-section { padding:14px 22px; }
   .ai-bootcamp-page .abc-batch-grid,.ai-bootcamp-page .abc-results,.ai-bootcamp-page .abc-booking { grid-template-columns:1fr; }
-  .ai-bootcamp-page .abc-booking { margin:16px; padding:22px 20px; }
+  .ai-bootcamp-page .abc-booking { margin:12px 16px; padding:18px 20px; }
   .ai-bootcamp-page .abc-booking h2 { font-size:34px; }
   .ai-bootcamp-page .abc-batch>strong { font-size:27px; }
-  .ai-bootcamp-page .abc-learning-card { padding:18px; }
+  .ai-bootcamp-page .abc-learning-card { padding:14px; }
   .ai-bootcamp-page .abc-learning-grid { gap:12px; }
-  .ai-bootcamp-page .abc-section-heading { margin-bottom:16px; }
+  .ai-bootcamp-page .abc-section-heading { margin-bottom:12px; }
 }
 @media(max-width:400px) { .ai-bootcamp-page h1 { font-size:44px; }.ai-bootcamp-page .abc-hero-tagline { font-size:21px; }.ai-bootcamp-page .abc-learning-grid { grid-template-columns:1fr; }.ai-bootcamp-page .abc-hero-date { font-size:17px; }.ai-bootcamp-page .abc-facts strong { font-size:14px; }.ai-bootcamp-page .abc-facts span { font-size:10px; }.ai-bootcamp-page .abc-partners { gap:11px; }.ai-bootcamp-page .abc-codebyte { font-size:18px; }.ai-bootcamp-page .abc-miles { font-size:29px; } }
 @media(prefers-reduced-motion:reduce) { .ai-bootcamp-page .abc-button { transition:none; } }
