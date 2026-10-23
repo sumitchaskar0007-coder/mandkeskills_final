@@ -1,7 +1,7 @@
 /* Shared page rhythm
    Keeps content aligned and removes oversized gaps without affecting the
    global navigation, footer, or the custom Webinar composition. */
-.flex-grow > :not(.webinar-page) .container {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) .container {
   width: 100% !important;
   max-width: 1280px !important;
   margin-inline: auto !important;
@@ -47,8 +47,8 @@
 
 /* Keep page introductions close to the navigation instead of stretching
    every hero to the full viewport height. */
-.flex-grow > :not(.webinar-page) > .hero-section,
-.flex-grow > :not(.webinar-page) > .about-hero {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .hero-section,
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .about-hero {
   min-height: auto !important;
   padding-top: clamp(32px, 4vw, 48px) !important;
   padding-bottom: clamp(36px, 5vw, 56px) !important;
@@ -62,23 +62,23 @@
   padding-top: clamp(32px, 4vw, 48px) !important;
 }
 
-.flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) section:not(.hero-section):not(.stats-section) {
   padding-top: 36px !important;
   padding-bottom: 36px !important;
 }
 
-.flex-grow > :not(.webinar-page) [class$="-grid"] {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) [class$="-grid"] {
   gap: clamp(16px, 2vw, 24px) !important;
 }
 
-.flex-grow > :not(.webinar-page) .section-header,
-.flex-grow > :not(.webinar-page) .faq-header {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) .section-header,
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) .faq-header {
   margin-bottom: clamp(20px, 3vw, 32px) !important;
 }
 
 @media (max-width: 768px) {
-  .flex-grow > :not(.webinar-page) > .hero-section,
-  .flex-grow > :not(.webinar-page) > .about-hero {
+  .flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .hero-section,
+  .flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .about-hero {
     padding-top: 24px !important;
     padding-bottom: 32px !important;
   }
@@ -91,12 +91,12 @@
     padding-top: 24px !important;
   }
 
-  .flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+  .flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) section:not(.hero-section):not(.stats-section) {
     padding-top: 28px !important;
     padding-bottom: 28px !important;
   }
 
-  .flex-grow > :not(.webinar-page) [class$="-grid"] {
+  .flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) [class$="-grid"] {
     gap: 14px !important;
   }
 }
@@ -116,18 +116,18 @@ img {
   content-visibility: auto;
 }
 
-.flex-grow > :not(.webinar-page) .container {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) .container {
   width: min(100% - 24px, 1180px) !important;
   padding-inline: clamp(12px, 2vw, 22px) !important;
 }
 
-.flex-grow > :not(.webinar-page) section:not(.hero-section):not(.stats-section) {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) section:not(.hero-section):not(.stats-section) {
   padding-top: clamp(24px, 3.5vw, 36px) !important;
   padding-bottom: clamp(24px, 3.5vw, 36px) !important;
 }
 
-.flex-grow > :not(.webinar-page) > .hero-section,
-.flex-grow > :not(.webinar-page) > .about-hero {
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .hero-section,
+.flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) > .about-hero {
   min-height: auto !important;
   padding-top: clamp(20px, 3.5vw, 40px) !important;
   padding-bottom: clamp(28px, 4vw, 44px) !important;
@@ -351,7 +351,7 @@ img {
 }
 
 @media (max-width: 640px) {
-  .flex-grow > :not(.webinar-page) .container {
+  .flex-grow > :not(.webinar-page):not(.ai-bootcamp-page) .container {
     width: min(100% - 18px, 1180px) !important;
   }
 }

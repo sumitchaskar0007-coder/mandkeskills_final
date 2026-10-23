@@ -84,18 +84,17 @@ const Footer = () => {
                   Contact
                 </a>
               </li>
-              {/* <li>
+              <li>
                 <a 
-                  href="/webinar" 
-                  className="registration-link"
+                  href="/ai-bootcamp"
                   onClick={(e) => {
                     e.preventDefault();
-                    handleNavigation('/webinar');
+                    handleNavigation('/ai-bootcamp');
                   }}
                 >
-                  Webinar
+                  Join AI Bootcamp
                 </a>
-              </li> */}
+              </li>
             </ul>
           </div>
 

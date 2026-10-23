@@ -1,4 +1,4 @@
-import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Link, Navigate, useLocation } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./components/Navbar";
@@ -15,7 +15,7 @@ import DataAnalytics from "./pages/DataAnalytics";
 import PersonalityPage from "./pages/PersonalityPage";
 import About from "./pages/About";
 import Contact from "./pages/ContactPage";
-import Webinar from "./pages/Webinar";
+import AIBootcamp from "./pages/AIBootcamp";
 import ScrollToTop from "./components/ScrollToTop";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -70,7 +70,8 @@ function App() {
           <Route path="/courses/personality" element={<PersonalityPage />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/webinar" element={<Webinar />} />
+          <Route path="/ai-bootcamp" element={<AIBootcamp />} />
+          <Route path="/webinar" element={<Navigate to="/ai-bootcamp" replace />} />
         </Routes>
       </div>
 

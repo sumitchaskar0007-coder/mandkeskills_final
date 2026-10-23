@@ -33,6 +33,8 @@ export default function Navbar() {
       setActivePage("Home");
     } else if (path === "/courses") {
       setActivePage("Courses");
+    } else if (path === "/ai-bootcamp" || path === "/webinar") {
+      setActivePage("AI Bootcamp");
     } else if (path === "/about") {
       setActivePage("About");
     }  else if (path.startsWith("/courses/")) {
@@ -1241,12 +1243,12 @@ export default function Navbar() {
 
           </ul>
 
-          {/* Apply Now & Webinar Buttons - Right */}
+          {/* Enquiry and AI Bootcamp links */}
           <div className="search-section">
             <button className="apply-btn" onClick={openInterestForm}>
               Enquiry
             </button>
-            
+            <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined}>Join AI Bootcamp</Link>
           </div>
 
           {/* Hamburger - Mobile */}
@@ -1344,6 +1346,8 @@ export default function Navbar() {
           )}
 
           <div className="mobile-divider" />
+
+          <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined} onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}>Join AI Bootcamp</Link>
 
           <button className="mobile-cta" onClick={openInterestForm}>
             Apply Now — Express Your Interest →
