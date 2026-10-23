@@ -1248,7 +1248,7 @@ export default function Navbar() {
             <button className="apply-btn" onClick={openInterestForm}>
               Enquiry
             </button>
-            <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined}>Join AI Bootcamp</Link>
+            <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined}>Explore AI Bootcamp</Link>
           </div>
 
           {/* Hamburger - Mobile */}
@@ -1347,7 +1347,7 @@ export default function Navbar() {
 
           <div className="mobile-divider" />
 
-          <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined} onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}>Join AI Bootcamp</Link>
+          <Link to="/ai-bootcamp" className="ai-bootcamp-nav" aria-current={activePage === "AI Bootcamp" ? "page" : undefined} onClick={() => { setMobileOpen(false); setMobileCoursesOpen(false); }}>Explore AI Bootcamp</Link>
 
           <button className="mobile-cta" onClick={openInterestForm}>
             Apply Now — Express Your Interest →

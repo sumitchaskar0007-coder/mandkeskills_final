@@ -35,17 +35,16 @@ export default function AIBootcamp() {
   return (
     <main className="ai-bootcamp-page" aria-labelledby="bootcamp-title">
       <div className="abc-poster">
-        <div className="abc-partners"><span className="abc-miles">MILES</span><span className="abc-partner-cross">×</span><span className="abc-codebyte">CODEBYTE AI</span><span className="abc-partner-caption">Practical AI training. Designed for everyone.</span></div>
+        <div className="abc-partners"><span className="abc-miles">MILES</span><span className="abc-partner-cross">×</span><span className="abc-codebyte">CODEBYTE AI</span></div>
         <section className="abc-hero">
           <div className="abc-hero-copy">
-            <span className="abc-eyebrow"><Sparkles aria-hidden="true" /> 7 days. Real-world skills.</span>
+            <span className="abc-eyebrow"><Sparkles aria-hidden="true" /> Practical AI training. Designed for everyone.</span>
             <h1 id="bootcamp-title">No-Code AI<br /><span>Bootcamp</span> <small>(7 Days)</small></h1>
             <p className="abc-hero-tagline">No coding? <strong>No problem.</strong></p>
-            <p className="abc-intro">Study smarter, work faster and boost your productivity. MILES × CODEBYTE AI brings you practical, hands-on AI training designed for <strong>EVERYONE!</strong></p>
+            <p className="abc-intro">Study smarter, work faster and boost your productivity. MILES × CODEBYTE AI brings you practical, hands-on AI training designed for <strong>EVERYONE!</strong> <strong className="abc-prerequisite">NO TECHNICAL BACKGROUND OR PRIOR AI KNOWLEDGE NEEDED!</strong></p>
             <div className="abc-hero-date"><CalendarDays aria-hidden="true" /><span><time dateTime="2026-11-01">1</time>–<time dateTime="2026-11-07">7 November 2026</time></span></div>
             <p className="abc-hero-offer">{earlyBird ? <>Early Bird <strong>₹1,499 ONLY!</strong><span>Valid till 28 October 2026 · ₹1,999 thereafter</span></> : <>Register for <strong>₹1,999</strong></>}</p>
             <div className="abc-actions"><a className="abc-button" href={REGISTRATION_URL} target="_blank" rel="noopener noreferrer">Join AI Bootcamp <ArrowRight aria-hidden="true" /></a><a className="abc-details-link" href="#bootcamp-details">Explore the bootcamp ↓</a></div>
-            <p className="abc-hero-note"><Check aria-hidden="true" /> No technical background or prior AI knowledge needed!</p>
           </div>
           <div className="abc-visual">
             <img src="/assets/images/ai_i.png" alt="Friendly AI robot with glowing teal eyes" width="640" height="640" fetchPriority="high" />
@@ -61,6 +60,20 @@ export default function AIBootcamp() {
           <div><Award aria-hidden="true" /><strong>Digital Certificate</strong><span>Certificate of Completion</span></div>
         </section>
 
+        <section className="abc-section abc-audience" aria-labelledby="abc-audience-title"><span className="abc-kicker">Built for curious minds</span><h2 id="abc-audience-title">AI is for everyone. <span>That includes you.</span></h2><p>Age 15+ · No coding or technical background required.</p><ul>{["Students", "Professionals", "Entrepreneurs", "Homemakers"].map(label => <li key={label}><Check aria-hidden="true" />{label}</li>)}</ul></section>
+
+        <section className="abc-section abc-tools" aria-labelledby="abc-tools-title"><div className="abc-section-heading"><span className="abc-kicker">Your AI toolkit</span><h2 id="abc-tools-title">8+ Tools. <span>So many possibilities.</span></h2><p>Explore tools for research, creativity, applications, data and automation.</p></div><ul>{tools.map(tool => <li key={tool}>{tool}</li>)}</ul></section>
+
+        <section className="abc-section abc-learning" aria-labelledby="abc-learning-title">
+          <div className="abc-section-heading"><span className="abc-kicker">Key takeaways</span><h2 id="abc-learning-title">Useful skills. <span>Every single day.</span></h2><p>Learn useful AI tools and techniques, work on real-world projects, and turn everyday tasks into opportunities.</p></div>
+          <div className="abc-learning-grid">{takeaways.map(({ icon: Icon, title, text }, index) => <article className="abc-learning-card" key={title}><div className="abc-card-top"><Icon aria-hidden="true" /><span>0{index + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div>
+        </section>
+
+        <section className="abc-section abc-results" aria-labelledby="abc-results-title">
+          <div><span className="abc-kicker">What you will be able to do</span><h2 id="abc-results-title">Don’t just hear about AI.<br /><span>Learn to USE it!</span></h2><div className="abc-certificate"><Award aria-hidden="true" /><div><strong>Digital Certificate of Completion</strong><p>Celebrate your new skills after completing the bootcamp.</p></div></div></div>
+          <ol className="abc-outcomes">{outcomes.map((outcome, index) => <li key={outcome}><span>0{index + 1}</span><p>{outcome}</p></li>)}</ol>
+        </section>
+
         <section className="abc-section abc-schedule" id="bootcamp-details" aria-labelledby="abc-schedule-title">
           <div className="abc-section-heading"><span className="abc-kicker">Your week of AI starts here</span><h2 id="abc-schedule-title">One bootcamp. <span>Two batch options.</span></h2><p>1–7 November 2026 · 7 days of live online learning. Choose the batch that fits your day.</p></div>
           <div className="abc-batch-grid">
@@ -69,20 +82,6 @@ export default function AIBootcamp() {
           </div>
           <p className="abc-timezone">All session times are in India Standard Time (UTC+5:30).</p>
         </section>
-
-        <section className="abc-section abc-learning" aria-labelledby="abc-learning-title">
-          <div className="abc-section-heading"><span className="abc-kicker">Key takeaways</span><h2 id="abc-learning-title">Useful skills. <span>Every single day.</span></h2><p>Learn useful AI tools and techniques, work on real-world projects, and turn everyday tasks into opportunities.</p></div>
-          <div className="abc-learning-grid">{takeaways.map(({ icon: Icon, title, text }, index) => <article className="abc-learning-card" key={title}><div className="abc-card-top"><Icon aria-hidden="true" /><span>0{index + 1}</span></div><h3>{title}</h3><p>{text}</p></article>)}</div>
-        </section>
-
-        <section className="abc-section abc-tools" aria-labelledby="abc-tools-title"><div className="abc-section-heading"><span className="abc-kicker">Your AI toolkit</span><h2 id="abc-tools-title">13 tools. <span>So many possibilities.</span></h2><p>Explore tools for research, creativity, applications, data and automation.</p></div><ul>{tools.map(tool => <li key={tool}>{tool}</li>)}</ul></section>
-
-        <section className="abc-section abc-results" aria-labelledby="abc-results-title">
-          <div><span className="abc-kicker">What you will be able to do</span><h2 id="abc-results-title">Don’t just hear about AI.<br /><span>Learn to USE it!</span></h2><div className="abc-certificate"><Award aria-hidden="true" /><div><strong>Digital Certificate of Completion</strong><p>Celebrate your new skills after completing the bootcamp.</p></div></div></div>
-          <ol className="abc-outcomes">{outcomes.map((outcome, index) => <li key={outcome}><span>0{index + 1}</span><p>{outcome}</p></li>)}</ol>
-        </section>
-
-        <section className="abc-section abc-audience" aria-labelledby="abc-audience-title"><span className="abc-kicker">Built for curious minds</span><h2 id="abc-audience-title">AI is for everyone. <span>That includes you.</span></h2><p>Age 15+ · No coding or technical background required.</p><ul>{["Students", "Professionals", "Entrepreneurs", "Homemakers"].map(label => <li key={label}><Check aria-hidden="true" />{label}</li>)}</ul></section>
 
         <section className="abc-booking" aria-labelledby="abc-booking-title">
           <div className="abc-booking-copy"><span className="abc-kicker">Your next skill starts here</span><h2 id="abc-booking-title">Future Ready Skills.<br /><span>Real World Impact.</span></h2><p>7 days. Live online. Learn from Anywhere.</p><p className="abc-limited"><UsersRound aria-hidden="true" /> Only 25 seats per batch</p></div>

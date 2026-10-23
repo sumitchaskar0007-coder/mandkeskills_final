@@ -134,24 +134,24 @@ img {
 }
 
 /* Smaller heading sizes with reduced weight */
-.flex-grow :is(h1, .hero-title) {
+.flex-grow > :not(.ai-bootcamp-page) :is(h1, .hero-title) {
   font-size: clamp(1.4rem, 3.8vw, 2.4rem) !important;
   line-height: 1.15 !important;
   font-weight: 700 !important;
 }
 
-.flex-grow :is(h2, .section-header h2, .faq-title) {
+.flex-grow > :not(.ai-bootcamp-page) :is(h2, .section-header h2, .faq-title) {
   font-size: clamp(1.1rem, 2.6vw, 1.7rem) !important;
   line-height: 1.2 !important;
   font-weight: 600 !important;
 }
 
-.flex-grow :is(h3, .course-card h3, .quick-info-card h3) {
+.flex-grow > :not(.ai-bootcamp-page) :is(h3, .course-card h3, .quick-info-card h3) {
   font-size: clamp(0.85rem, 1.8vw, 1.05rem) !important;
   font-weight: 600 !important;
 }
 
-.flex-grow :is(h4, .testimonial-card h4) {
+.flex-grow > :not(.ai-bootcamp-page) :is(h4, .testimonial-card h4) {
   font-size: clamp(0.78rem, 1.4vw, 0.92rem) !important;
   font-weight: 600 !important;
 }
@@ -397,17 +397,17 @@ img {
   }
   
   /* Smaller headings on mobile */
-  .flex-grow :is(h1, .hero-title) {
+  .flex-grow > :not(.ai-bootcamp-page) :is(h1, .hero-title) {
     font-size: clamp(1.2rem, 5vw, 1.8rem) !important;
     font-weight: 700 !important;
   }
   
-  .flex-grow :is(h2, .section-header h2, .faq-title) {
+  .flex-grow > :not(.ai-bootcamp-page) :is(h2, .section-header h2, .faq-title) {
     font-size: clamp(1rem, 3.5vw, 1.4rem) !important;
     font-weight: 600 !important;
   }
   
-  .flex-grow :is(h3, .course-card h3, .quick-info-card h3) {
+  .flex-grow > :not(.ai-bootcamp-page) :is(h3, .course-card h3, .quick-info-card h3) {
     font-size: clamp(0.78rem, 2.2vw, 0.92rem) !important;
     font-weight: 600 !important;
   }
@@ -418,11 +418,11 @@ img {
 }
 
 @media (max-width: 480px) {
-  .flex-grow :is(h1, .hero-title) {
+  .flex-grow > :not(.ai-bootcamp-page) :is(h1, .hero-title) {
     font-size: clamp(1rem, 4.5vw, 1.4rem) !important;
   }
   
-  .flex-grow :is(h2, .section-header h2, .faq-title) {
+  .flex-grow > :not(.ai-bootcamp-page) :is(h2, .section-header h2, .faq-title) {
     font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
   }
 }
