@@ -132,12 +132,10 @@ body {
 }
 
 .career-dropdown {
-  position: absolute;
-  z-index: 20;
-  top: 0;
-  bottom: auto;
-  left: calc(100% + 12px);
-  width: min(720px, calc(100vw - 260px));
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  margin-top: 20px;
   padding: 16px;
   border: 1px solid #dbeafe;
   border-radius: 18px;
@@ -149,14 +147,14 @@ body {
 .career-dropdown::before {
   content: "";
   position: absolute;
-  top: 20px;
-  left: -8px;
+  top: -8px;
+  left: 28px;
   width: 14px;
   height: 14px;
   border-left: 1px solid #dbeafe;
   border-bottom: 1px solid #dbeafe;
   background: #ffffff;
-  transform: rotate(45deg);
+  transform: rotate(135deg);
 }
 
 .career-dropdown-head {
@@ -1281,21 +1279,8 @@ body {
     margin-right: auto;
   }
 
-  .career-dropdown {
-    width: min(620px, calc(100vw - 32px));
-    top: auto;
-    right: 0;
-    bottom: calc(100% + 12px);
-    left: auto;
-    transform: none;
-  }
-
   .career-dropdown::before {
-    top: auto;
-    right: 28px;
-    bottom: -8px;
-    left: auto;
-    transform: rotate(-45deg);
+    left: calc(50% - 7px);
   }
 
   .hero-image {
@@ -1514,11 +1499,6 @@ body {
 
   .hero-description {
     font-size: 0.95rem;
-  }
-
-  .career-dropdown {
-    width: calc(100vw - 24px);
-    padding: 16px;
   }
 
   .career-choices {

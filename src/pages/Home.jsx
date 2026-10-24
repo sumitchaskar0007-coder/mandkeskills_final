@@ -195,51 +195,6 @@ Courses Designed With Industry Needs.
                   Career Path Finder
                   <ChevronDown size={18} />
                 </button>
-
-                {careerMenuOpen && (
-                  <div className="career-dropdown" id="career-path-menu">
-                    <div className="career-dropdown-head">
-                      <span>Career Path Finder</span>
-                      <strong>What sounds most like you?</strong>
-                    </div>
-
-                    <div className={`career-choices${selectedCareer ? " has-selection" : ""}`}>
-                      {(selectedCareer ? [selectedCareer] : careerPaths).map((path) => (
-                        <button
-                          key={path.id}
-                          type="button"
-                          className={selectedCareer?.id === path.id ? "active" : ""}
-                          onClick={() => setSelectedCareer(path)}
-                        >
-                          {path.label}<ArrowRight size={15} />
-                        </button>
-                      ))}
-
-                      {selectedCareer && (
-                        <div className="career-suggestions" aria-live="polite">
-                          <div className="career-suggestions-head">
-                            <span>Suggested courses</span>
-                            <button
-                              type="button"
-                              aria-label="Clear selected career"
-                              title="Clear selection"
-                              onClick={() => setSelectedCareer(null)}
-                            >
-                              <X size={16} aria-hidden="true" />
-                            </button>
-                          </div>
-                          <div>
-                            {selectedCareer.courses.map((course) => (
-                              <Link key={course.title} to={course.path}>
-                                {course.title}<ArrowRight size={15} />
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
               </div>
             </div>
 
@@ -257,6 +212,51 @@ Courses Designed With Industry Needs.
             </div>
 
           </div>
+
+          {careerMenuOpen && (
+            <div className="career-dropdown" id="career-path-menu">
+              <div className="career-dropdown-head">
+                <span>Career Path Finder</span>
+                <strong>What sounds most like you?</strong>
+              </div>
+
+              <div className={`career-choices${selectedCareer ? " has-selection" : ""}`}>
+                {(selectedCareer ? [selectedCareer] : careerPaths).map((path) => (
+                  <button
+                    key={path.id}
+                    type="button"
+                    className={selectedCareer?.id === path.id ? "active" : ""}
+                    onClick={() => setSelectedCareer(path)}
+                  >
+                    {path.label}<ArrowRight size={15} />
+                  </button>
+                ))}
+
+                {selectedCareer && (
+                  <div className="career-suggestions" aria-live="polite">
+                    <div className="career-suggestions-head">
+                      <span>Suggested courses</span>
+                      <button
+                        type="button"
+                        aria-label="Clear selected career"
+                        title="Clear selection"
+                        onClick={() => setSelectedCareer(null)}
+                      >
+                        <X size={16} aria-hidden="true" />
+                      </button>
+                    </div>
+                    <div>
+                      {selectedCareer.courses.map((course) => (
+                        <Link key={course.title} to={course.path}>
+                          {course.title}<ArrowRight size={15} />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
       </section>
 

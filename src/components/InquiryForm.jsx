@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-
 const courseOptions = [
   'EXIM Trade',
   'Insurance Essentials',
@@ -15,7 +14,6 @@ const courseOptions = [
   'GenAI & ML No-Code',
   'Personality Development',
 ];
-
 const InquiryForm = ({ 
   prefix = 'contact', 
   className = '', 
@@ -26,13 +24,11 @@ const InquiryForm = ({
   const [submitStatus, setSubmitStatus] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
   const formRef = useRef(null);
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
     setSubmitStatus(null);
     setStatusMessage('');
-
     const formData = new FormData(event.currentTarget);
     const data = {
       name: formData.get('name') || '',
@@ -41,7 +37,6 @@ const InquiryForm = ({
       program: formData.get('program') || '',
       message: formData.get('message') || '',
     };
-
     try {
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -50,9 +45,7 @@ const InquiryForm = ({
         },
         body: JSON.stringify(data),
       });
-
       const result = await response.json();
-
       if (response.ok) {
         setSubmitStatus('success');
         setStatusMessage(result.message || 'Your enquiry has been submitted successfully!');
@@ -80,7 +73,6 @@ const InquiryForm = ({
       setLoading(false);
     }
   };
-
   return (
     <>
       <form 
@@ -176,7 +168,6 @@ const InquiryForm = ({
           )}
         </button>
       </form>
-
       <style>{`
         /* Base styles */
         .contact-form {
@@ -212,7 +203,6 @@ const InquiryForm = ({
           font-size: 14px;
           font-family: "Poppins", sans-serif;
         }
-
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -296,7 +286,6 @@ const InquiryForm = ({
         @keyframes spin {
           to { transform: rotate(360deg); }
         }
-
         .submit-btn {
           background: linear-gradient(135deg, #1a56db, #1e40af);
           color: white;
@@ -322,38 +311,31 @@ const InquiryForm = ({
           transform: translateY(-2px);
           box-shadow: 0 20px 40px rgba(26, 86, 219, 0.35);
         }
-
         .submit-btn:active:not(:disabled) {
           transform: translateY(0);
         }
-
         .submit-btn:disabled {
           opacity: 0.7;
           cursor: not-allowed;
           transform: none;
         }
-
         input:disabled, select:disabled, textarea:disabled {
           opacity: 0.6;
           cursor: not-allowed;
           background: #f5f5f5;
         }
-
         /* Tablet and smaller screens */
         @media (max-width: 768px) {
           .contact-form {
             gap: 14px;
           }
-
           .form-row {
             grid-template-columns: 1fr;
             gap: 14px;
           }
-
           .form-group.full-width {
             grid-column: 1;
           }
-
           .form-group input,
           .form-group select,
           .form-group textarea {
@@ -361,7 +343,6 @@ const InquiryForm = ({
             font-size: 15px; /* Better for mobile touch */
             border-radius: 10px;
           }
-
           .form-group label {
             font-size: 13px;
           }
@@ -371,24 +352,20 @@ const InquiryForm = ({
             font-size: 15px;
             min-height: 48px;
           }
-
           .form-success,
           .form-error {
             font-size: 13px;
             padding: 10px 14px;
           }
         }
-
         /* Mobile phones */
         @media (max-width: 480px) {
           .contact-form {
             gap: 12px;
           }
-
           .form-row {
             gap: 12px;
           }
-
           .form-group input,
           .form-group select,
           .form-group textarea {
@@ -396,7 +373,6 @@ const InquiryForm = ({
             font-size: 14px;
             border-radius: 8px;
           }
-
           .form-group label {
             font-size: 12px;
             gap: 6px;
@@ -447,7 +423,6 @@ const InquiryForm = ({
             padding: 6px 10px;
           }
         }
-
         /* Landscape phones */
         @media (max-height: 500px) and (orientation: landscape) {
           .contact-form {
